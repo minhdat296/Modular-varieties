@@ -1,0 +1,15 @@
+\chapter{The Langlands-Kottwitz method for modular curves}
+    \begin{abstract}
+        We follow hereinafter a paper of Peter Scholze (cf. \cite{scholze_langlands_kottwitz_for_modular_curves}), wherein he explained how the Langland-Kottwitz Method for counting points of Shimura varieties could be used to determine local factors of Hasse-Weil $\zeta$-functions of modular curves at places of bad reduction as well as to prove a trace formula for $\ell$-adic cohomologies of Shimura varieties conjectured Haines and Kottwitz.
+    \end{abstract}
+    
+    \minitoc
+    
+    \section{Introduction}
+        Fix an integer $m$ and let $\pi: \calM_m \to \Spec \Z\left[\frac1m\right]$ be the moduli space of elliptic curves with level-$m$ structures and let $\pi_n: \calM_{\Gamma(p^n), m} \to \calM_m$ be the finite \'etale covering thereof by the moduli space of elliptic curves with Drinfeld level-$p^n$ structures and level-$m$ structures. By inverting the prime $p$ (i.e. by restricting down to a Zariski-open neighbourhood of the point $(p) \in \Spec \Z\left[\frac1m\right]$), one obtains a Galois covering $\pi_n\left[\frac1p\right]: \calM_{\Gamma(p^n), m}\left[\frac1p\right] \to \calM_m\left[\frac1p\right]$ whose Galois group is $\GL_2(\Z/p^n)$.
+        
+        Next, recall via the Proper Base Change Theorem for \'Etale Cohomology and the Lefschetz Trace Formula (also within the context of \'etale cohomology of algebraic varieties) that for $X$ a proper smooth variety over $\Spec \Q$ with good reduction at some given prime $p$, the local factor at $p$ of its Hasse-Weil $\zeta$-function is given by:
+            $$\zeta_{X/p}(s) := \exp \sum_{r \geq 1} |\frakX(\F_{p^r})| \frac{p^{-rs}}{r}$$
+        wherein $\frakX$ is some proper smooth model over $\Spec \Z_{(p)}$ of $X$.
+    
+    \section{The Langlands-Kottwitz for counting points of Shimura varieties}
