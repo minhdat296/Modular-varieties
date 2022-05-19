@@ -1,0 +1,27 @@
+\chapter{Drinfeld modular varieties}
+    \begin{abstract}
+        To any quadruple $(F, x_{\infty}, \GL_d, \frakN)$ consisting of the function field $F := k(X)$ of a suitable algebraic curve over a finite field $k := \F_q$, a place $x_{\infty}$ of $F$, a general linear group scheme $\GL_d$ over $\Spec k$, and a non-zero ideal $\frakN \subset k[X]$, one can associate an affine and smooth scheme of dimension $d - 1$ over $\Spec k[X] \setminus V(\frakN)$, a so-called Drinfeld modular variety $\calM_{\GL_d, \frakN}$. Such a modular variety is a positive-characteristic analogue of Shimura varieties and as such parametrises \say{elliptic data}: just as how the modular curve $X(N)$ parametrises elliptic curves with level-$N$ structures, or how PEL-type Shimura varieties parametrise certain kinds of higher-dimensional abelian varieties, Drinfeld modular varieties parmaterise so-called \say{elliptic modules} of rank $d$ and level-$\frakN$ structures. One can therefore employ them to construct and prove a version of the Langlands Correspondence for global function fields over finite fields, in the same manner that the modular curve was used for attempts at understanding the Modularity Theorem: the hope is that the richness of positive-characteristic geometry will shine some light on the mysteries of the Langlands Correspondence, thereby serving as a template for the Global Correspondence over number fields. 
+    \end{abstract}
+    
+    We subscribe to the following general conventions throughout the entire chapter:
+    \begin{convention}
+        Throughout the chapter, we work over a fixed smooth, projective, and geometrically connected curve $X$ over a finite field $k := \F_q$. Such a curve, by virtue of being an integral scheme, admits a unique generic point that we shall denote by $\eta$; the residue field of said generic point shall be denoted by $F$. The completion of $F$ at each closed point $x \in |X|$ shall be denoted by $F_x$, each of which is a non-archimedean discretely valued local field whose ring of intergers and residue field shall, respectively, be denoted by $\scrO_x$ and $\kappa_x$; we will also often pick and fix pseudo-uniformisers $\varpi_x \in \scrO_x$. In addition, the degree $\deg(x)$ of a given closed point $x \in |X|$ shall be the degree of the extension $[\kappa_x : \F_q]$.  
+    \end{convention}
+    
+    Let us also recall the following rather well-known result from basic algebraic geometry, which allows us to fix once and for all a closed point $x_{\infty} \in |X|$ for which $X \setminus \{x_{\infty}\}$ is affine (in fact, isomorphic to $\Spec k[X]$):
+    \begin{proposition}
+        Suppose that $X$ is a smooth and geometrically connected smooth curve over a field $k$, and suppose that $x_1, ..., x_n \in |X|$ are finitely many arbitrarily chosen closed points of $X$. Then, the scheme $X \setminus \{x_1, ..., x_n\}$ will be affine.  
+    \end{proposition}
+
+    \section{Construction of Drinfeld modular varieties}
+        \subsection{Endomorphisms of the additive group}
+            \begin{convention}[The additive group]
+                From now on, $\G_a$ shall denote the additive (affine) group scheme over $\Spec k$. Recall that it is represented by the affine scheme $\Spec k[t]$.
+            \end{convention}
+            \begin{remark}[Endomorphisms of the additive group]
+                The first observation that (for all commutative rings $k$ of characteristic $p > 0$) one could make is that $\End(\G_a/k)$ is a noncommutative ring which is isomorphic to the noncommutative polynomial ring $k\<\tau\>/\<\forall \alpha \in k: \alpha^p \tau = \tau \alpha\>$. 
+            \end{remark}
+    
+    \section{Drinfeld modules}
+    
+    \section{Counting points on Drinfeld modular varieties}
