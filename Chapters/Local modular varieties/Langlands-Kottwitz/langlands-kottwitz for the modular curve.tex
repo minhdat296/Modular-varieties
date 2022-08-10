@@ -10,6 +10,8 @@
         
         Next, recall via the Proper Base Change Theorem for \'Etale Cohomology and the Lefschetz Trace Formula (also within the context of \'etale cohomology of algebraic varieties) that for $X$ a proper smooth variety over $\Spec \Q$ with good reduction at some given prime $p$, the local factor at $p$ of its Hasse-Weil $\zeta$-function is given by:
             $$\zeta_{X/p}(s) := \exp \sum_{r \geq 1} |\frakX(\F_{p^r})| \frac{p^{-rs}}{r}$$
-        wherein $\frakX$ is some proper smooth model over $\Spec \Z_{(p)}$ of $X$.
+        wherein $\frakX$ is some proper smooth model over $\Spec \Z_{(p)}$ of $X$, and the semi-simple factor is given by:
+            $$\zeta_p^{\semisimple}(s) := \exp\left( \sum_{r \geq 1} \sum_{x \in |\calM_m(\F_{p^r})|} \trace^{\semisimple}(\Frob_{p^r} \mid ( \Psi^{\bullet} \bar{\Q}_{\ell})_x) \right) \frac{p^{-rs}}{r}$$
+        wherein $\Psi^{\bullet}: D_{\lisse}^b(\frakX_{\eta}) \to D_{\lisse}^b(\frakX_{\F_p} \x_{\F_p} \eta)$ is the (derived) functor of nearby cycles on the formal scheme $\frakX$ over the Henselian trait $(\Spec \Z_{(p)}, \Spec \F_p, \eta := \Spec \Frac \Z_{(p)})$. 
     
     \section{The Langlands-Kottwitz for counting points of Shimura varieties}

@@ -1,0 +1,65 @@
+\section{The geometry of abelian varieties}
+    \subsection{Abelian schemes}
+        \subsubsection{Rigidity and commutative group structures on abelian schemes}
+            \begin{definition}[Abelian schemes] \label{def: abelian_schemes}
+                Let $S$ be a base scheme. An \textbf{abelian $S$-scheme} is defined via a proper and smooth structural morphism $\pi: A \to S$ whose fibres over Zariski-points $s \in |S|$ are geometrically connected. 
+            \end{definition}
+            \begin{proposition}[Abelian schemes over fields are varieties] \label{prop: abelian_schemes_over_fields_are_varieties}
+                Abelian schemes over fields are algebraic varieties (and as such are called \textbf{abelian varieties}).
+            \end{proposition}
+                \begin{proof}
+                        
+                \end{proof}
+            \begin{corollary}[Abelian varieties are geometrically integral] \label{coro: abelian_varieties_are_geometrically_integral}
+                Abelian varieties are geometrically integral.
+            \end{corollary}
+                \begin{proof}
+                    
+                \end{proof}
+            \begin{example}
+                Elliptic curves are abelian varieties of dimension $1$.
+            \end{example}
+            \begin{example}
+                Due to the assumption of having geometrically connected fibres over Zariski-points, there are no $0$-dimensional abelian varieties (as spectra of field extensions are totally disconnected in the Zariski topology).
+            \end{example}
+            \begin{proposition}
+                Let $f: T \to S$ be any morphism of schemes and let $\pi: A \to S$ be an abelian scheme over $S$. Then the pullback $A_T := A \x_{\pi, S, f} T$ will be an abelian scheme over $T$.
+            \end{proposition}
+                \begin{proof}
+                    
+                \end{proof}
+                
+            As a test case, let us establish the following fact: that complex abelian varieties come naturally equipped with commutative group $\bbC$-variety structures. Generalising this fact to the case of abelian schemes over an arbitrary base will not be a trivial task, however, because for complex abelian varieties, the proof involves using the exponential map - which is transcendental -3 to globalise commutative Lie algebra structures on tangent spaces to the whole variety. 
+            \begin{proposition}[Uniformisations of complex abelian varieties] \label{prop: uniformisations_of_complex_abelian_varieties}
+                Let $A$ be an abelian $\bbC$-variety. Then the associated complex manifold $A^{\an} := A(\bbC)$ is biholomorphic to $\bbC^g/\Lambda$ for some\footnote{Later on, we will see that $g$ is actually the genus of $A$.} $g \geq 1$ and some full-rank free $\Z$-submodule $\Lambda \subset \bbC^g$.
+            \end{proposition}
+                \begin{proof}
+                    
+                \end{proof}
+            \begin{corollary}[Complex abelian varieties are Lie groups] \label{coro: complex_abelian_varieties_are_complex_lie_groups}
+                Any given complex abelian variety $A$ carries a natural commutative group $\bbC$-variety structure. In fact, $A^{\an}$ is a compact and connected complex Lie group.
+            \end{corollary}
+            \begin{example}
+                Because elliptic curves are abelian varieties of dimension $1$, complex elliptic curves uniformise to quotient complex manifolds of the form $\bbC/\Lambda$, where $\Lambda$ is a non-zero cyclic group.
+            \end{example}
+            \begin{remark}[Torsion subgroups of complex abelian varieties]
+                Proposition \ref{prop: uniformisations_of_complex_abelian_varieties}, in addition to serving as a test case for the establishment of the much more general fact that abelian schemes are commutative group schemes, also hints at how one might consider torsion subgroups of abelian varieties. In particular, for some complex abelian variety $A$ and uniformisation $\bbC^g/\Lambda$, one may define the $n$-torsion subgroup of the associated manifold $A^{\an}$ as:
+                    $$A^{\an}[n] := A(\bbC)[n]$$
+                and then see that:
+                    $$A^{\an}[n] \cong \Tor_1^{\Z}(\Z/n\Z, \bbC^g/\Lambda) \cong (\Z/n\Z)^{\oplus 2g}$$
+                As for applicatinos, notice that by letting $n$ vary through the powers of a prime $\ell$ when $g = 1$ (i.e. the case of complex elliptic curves), and by supposing furthermore that the complex elliptic curve $E_{\bbC}$ in question is actually the fibre over $\bbC$ of some elliptic curve over a number field $K/\Q$, this realisation of torsion subgroups $E_{\bbC}^{\an}[n]$ allows us to construct $2$-dimensional Galois representations:
+                    $$\rho_{E_{\bbC}}[\ell^r]: \Gal(\bar{K}/K) \to \GL_2(\Z/\ell^r\Z)$$
+                Taking the limit and tensoring over $\Z_{\ell}$ with $\bar{\Q}_{\ell}$ then yields us $2$-dimensional $\ell$-adic Galois representations:
+                    $$\rho_{E_{\bbC}, \bar{\Q}_{\ell}}: \Gal(\bar{K}/K) \to \GL_2(\bar{\Q}_{\ell})$$
+            \end{remark}
+            
+            Now, in order to generalise proposition \ref{prop: uniformisations_of_complex_abelian_varieties} to cases wherein the underlying base scheme is arbitrary and not just $\Spec \bbC$, we shall need to prove the so-called \textbf{Rigidity Theorems}.
+        
+        \subsubsection{Cohomology of abelian varieties}
+        
+    \subsection{Line bundles on abelian varieties}
+        \subsubsection{The Seesaw Principle}
+        
+        \subsubsection{The Theorem of the Cube}
+        
+        \subsubsection{Projectivity of abelian varieties}
