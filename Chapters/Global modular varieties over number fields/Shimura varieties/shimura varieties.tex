@@ -13,12 +13,18 @@
             \begin{definition}[Hermitian manifolds] \label{def: hermitian_manifolds}
                 A \textbf{Hermitian manifold} is a Riemannian\footnote{This means that if $(M, J)$ is a complex manifold of complex dimension $d \geq 0$ then $(M, g)$ will be a real manifold of real dimension $2d$.} complex manifold $(M, J, g)$ such that $g$ is bi-invariant with respect to the complex structure $J$, i.e. $g(J(v), J(w)) = g(v, w)$ at every point $x \in M$ and all vector fields $v, w \in T_xM$.
             \end{definition}
+            \begin{proposition}[Hermitian metrics are Hermitian forms]
+                At the level of tangent spaces, the Riemannian metric on a Hermitian manifold is a Hermitian sequi-linear form.
+            \end{proposition}
+                \begin{proof}
+                            
+                \end{proof}
             
             \begin{convention}[Automorphisms of manifolds]
-                From now on, if $(M, J)$ is a complex manifold then its group of (biholomorphic) automorphisms\footnote{Note that biholomorphic maps are isomorphisms in the category of complex manifolds.} shall be denoted by $\Bi\Hol(M, J)$, and if $(M, g)$ is a (complex) Riemannian manifold then we shall write $\Isom(M, g)$ for its group of (holomorphic) isometries\footnote{Note that these are isomorphisms in the category of Riemannian manifolds.}.
+                From now on, if $(M, J)$ is a complex manifold then its group of (biholomorphic) automorphisms\footnote{Note that biholomorphic maps are isomorphisms in the category of complex manifolds.} shall be denoted by $\Aut_{\bbC\-\Man}(M, J)$, and if $(M, g)$ is a (complex) Riemannian manifold then we shall write $\Aut_{\Riem}(M, g)$ for its group of (holomorphic) isometries\footnote{Note that these are isomorphisms in the category of Riemannian manifolds.}.
             \end{convention}
             \begin{definition}[Homogeneous manifolds] \label{def: homogeneous_manifolds}
-                A manifold $M$ is \textbf{homogeneous} if and only if it carries a transitive action of $\Aut(M)$. In particular, this means that a complex manifold $(M, J)$ (respectively, a Riemannian manifold $(M, g)$) is homogeneous if and only if the group $\Bi\Hol(M, J)$ (respectively, the group $(M, g)$) acts transitively on it.
+                A manifold $M$ is \textbf{homogeneous} if and only if it carries a transitive action of $\Aut(M)$. In particular, this means that a complex manifold $(M, J)$ (respectively, a Riemannian manifold $(M, g)$) is homogeneous if and only if the group $\Aut_{\bbC\-\Man}(M, J)$ (respectively, the group $(M, g)$) acts transitively on it.
             \end{definition}
             \begin{definition}[Symmetric spaces] \label{def: symmetric_spaces}
                 A homogeneous manifold $M$ is said to be \textbf{symmetric} if and only if at each point $x \in M$, there is an involutive automorphism $\sigma_x \in \GL(T_xM)$ for which only $0 \in T_xM$ is a fixed point. A symmetric Riemannian (respectively, Hermitian) manifold that is also connected is known as a \textbf{symmetric space} (respectively, a \textbf{Hermitian symmetric space}).
@@ -27,9 +33,9 @@
                 By homogeneity, the tangent space $T_xM$ at any point $x \in M$ of a symmetric manifold $M$ carries an involutive automorphism $\sigma_x \in \GL(T_xM)$ for which only $0 \in T_xM$ is a fixed point. In this sense, symmetric manifolds as in definition \ref{def: symmetric_spaces} are \textit{globally} symmetric.
             \end{remark}
             \begin{example}[The upper half-plane] \label{example: upper_half_plane_is_a_symmetric_space}
-                Let $\h := \{z \in \bbC \mid \Im(z) > 0 \}$ denote the complex upper half-plane, which we shall regard as a complex manifold of complex dimension $1$ with respect to the obvious complex structure (check this!). It can also be endowed with a Riemannian metric (known commonly as the \textbf{Poincar\'e metric}) given by $\sqrt{g(z)} := \frac{dz d\overline{z}}{\Im(z)^2}$, making it a Riemannian manifold of real dimension $2$ (check this too!). By regarding $\h$ as a Riemannian of real dimension $2$, we may think of it as the following subset of $\Mat_2(\R)$:
+                Let $\frakH := \{z \in \bbC \mid \Im(z) > 0 \}$ denote the complex upper half-plane, which we shall regard as a complex manifold of complex dimension $1$ with respect to the obvious complex structure (check this!). It can also be endowed with a Riemannian metric (known commonly as the \textbf{Poincar\'e metric}) given by $\sqrt{g(z)} := \frac{dz d\overline{z}}{\Im(z)^2}$, making it a Riemannian manifold of real dimension $2$ (check this too!). By regarding $\frakH$ as a Riemannian of real dimension $2$, we may think of it as the following subset of $\Mat_2(\R)$:
                     $$
-                        \h :=
+                        \frakH :=
                         \left\{
                             \begin{pmatrix}
                                 x & -y
@@ -43,9 +49,9 @@
                             y > 0
                         \right\}
                     $$
-                and so $\Isom(\h, g)$ is nothing but the subgroup of $\GL_2$ consisting of $2 \x 2$ invertible real matrices with determinant $1$ (so that they are isometries with respect to $g$), but this just means that $\Isom(\h, g) \cong \SL_2(\R)$. From here, one can show that the $\SL_2(\R)$-action given by:
+                and so $\Aut_{\Riem}(\frakH, g)$ is nothing but the subgroup of $\GL_2$ consisting of $2 \x 2$ invertible real matrices with determinant $1$ (so that they are isometries with respect to $g$), but this just means that $\Aut_{\Riem}(\frakH, g) \cong \SL_2(\R)$. From here, one can show that the $\SL_2(\R)$-action given by:
                     $$\begin{pmatrix}a & b\\c & d\end{pmatrix} \mapsto \left(z \mapsto \frac{az + b}{cz + d}\right)$$
-                is in fact transitive. $(\h, g)$ is thus a homogeneous complex Riemannian manifold. Now, in order to show that it is a symmetric space, observe that complex-conjugation is an involutive isometry at every point $z \in \h$, so the fact is trivial. Lastly, $\h$ is clearly connected, so it is indeed a symmetric space in the sense of definition \ref{def: symmetric_spaces}.
+                is in fact transitive. $(\frakH, g)$ is thus a homogeneous complex Riemannian manifold. Now, in order to show that it is a symmetric space, observe that complex-conjugation is an involutive isometry at every point $z \in \frakH$, so the fact is trivial. Lastly, $\frakH$ is clearly connected, so it is indeed a symmetric space in the sense of definition \ref{def: symmetric_spaces}.
             \end{example}
             \begin{example}[Complex projective line] \label{example: complex_projective_line_is_a_symmetric_space}
                     
@@ -58,7 +64,7 @@
                 A \textbf{complex domain} is a non-empty connected open subset of $\bbC^n$, for some $n \geq 0$. Such a complex domain is said to be bounded if and only if the underlying open subset of $\bbC^n$ is bounded. A complex domain, when regarded as a complex manifold with the obvious complex structure, is called \textbf{symmetric} if and only if it is so as a complex manifold. 
             \end{definition}
             \begin{proposition}[Bounded domains are Hermitian] \label{prop: bounded}
-                Every bounded complex domain $U$ has a canonical $\Bi\Hol(U)$-invariant Hermitian metric, commonly called the \textbf{Bergmann metric}.
+                Every bounded complex domain $U$ has a canonical $\Aut_{\bbC\-\Man}(U)$-invariant Hermitian metric, commonly called the \textbf{Bergmann metric}.
             \end{proposition}
                 \begin{proof}
                     
@@ -76,31 +82,193 @@
         \subsubsection{Classification of Hermitian symmetric spaces}
         
         \subsubsection{Locally symmetric spaces}
+            We begin with a few technical lemmas concerning quotients of Riemannian and complex manifolds by free actions of finite groups.
+            \begin{lemma}[Quotients by group actions are open] \label{lemma: quotients_by_group_actions_are_open}
+    	        Let $G$ be a group that acts continuously on some topological space $X$. Then, the quotient map $\pi: X \to X/G$ is open.
+    	    \end{lemma}
+    	        \begin{proof}
+    	            Because $G$ acts continuously on $X$, we get the following (wherein $U$ is an arbitrary open subset of $X$) from basic group theory:
+    	                $$\pi^{-1}(\pi(U)) = \bigcup_{g \in G} g(U)$$
+                    This tells us that the preimage of $\pi(U)$ under the continuous map $\pi$ is a union of open subsets of $X$ (namely the subsets $g(U)$, which are open because the group elements $g \in G$ act as homeomorphisms $g: X \to X$, by the definition of continuous group actions), and hence $\pi(U)$ is open in $X/G$ whenever $U$ is open in $X$. This is the precise condition for $\pi: X \to X/G$ to be an open map.
+    	        \end{proof}
+            \begin{lemma}[Bijective continuous open maps are homeomorphisms] \label{lemma: bijective_continuous_open_maps_are_homeomorphisms}
+                Bijective continuous open maps $f: X \to Y$ are homeomorphisms.
+            \end{lemma}
+                \begin{proof}
+                    Because $f: X \to Y$ is open, the preimage under $f^{-1}$ of any open subset $U$ of $X$ is an open subset of $Y$ (as such a preimage must be of the form $f(U)$), which shows that the inverse function $f^{-1}$ is continuous. $f: X \to Y$ is therefore a continuous bijection with continuous inverse, and therefore a homeomorphism by definition. 
+                \end{proof}
+            \begin{convention}
+                From now on, automorphism groups of topological spaces shall be implicitly understood to be equipped with the compact-open topology.
+            \end{convention}
+            \begin{proposition}[Coverings from free actions of finite groups] \label{prop: coverings_from_free_actions_of_finite_groups}
+                If $X$ is a Hausdorff topological space and $G$ is a finite group that acts freely and continuously on $X$, then the quotient map $\pi: X \to X/G$ is a covering.
+            \end{proposition}
+                \begin{proof}
+                    Since $\pi: X \to X/G$ is surjective, every point $[x] \in X/G$ has the form $\pi(x)$ for some $x \in X$. By combining this with the fact that $\pi: X \to X/G$ is an open map (cf. lemma \ref{lemma: quotients_by_group_actions_are_open}), one sees that every open neighbourhood $V$ of any given point $[x] \in X/G$ must have the form $\pi(U)$ for some open neighbourhood $U$ of a point $x \in \pi^{-1}([x])$. As a consequence, we can show that $\pi: X \to X/G$ is a local homeomorphism by showing that $\pi^{-1}(\pi(U))$ is a disjoint union of open subsets of $X$, each of which is homeomorphic to $\pi(U)$. To that end, we claim that for every point $x \in X$, there exists an open neighbourhood $U_x \ni x$ such that:
+                        $$\pi^{-1}(\pi(U_x)) \cong \coprod_{g \in G} g(U_x)$$
+                    
+                    We shall first prove that for all points $x \in X$, there exists an open neighbourhood $U_x \ni x$ thereof such that the set $\{g(U_x)\}_{g \in G}$ consists of pairwise disjoint open neighbourhoods of $gx$. To this end, note firstly that because $X$ is Hausdorff by assumption, one can always choose a set $\{U_{gx}\}_{g \in G}$ of pairwise disjoint open neighbourhoods of $gx$. Next, because the $G$-action is continuous, the preimages $g^{-1}(U_{gx})$ are open subsets of $X$, and because $G$ is finite, the (finite) intersection $U_x := \bigcap_{g \in G} g^{-1}(U_{gx})$ is also open in $X$. Now, observe that for all $g \in G$, the translations $g(U_x)$ are subsets of $U_{gx}$, and since the neighbourhoods $U_{gx}$ are pairwise disjoint, so are the translations $g(U_x)$. We are thus done with this step.
+                        
+                    Now, let us show that for any $g \in G$, $\pi|_{g(U_x)}: g(U_x) \to \pi(U_x)$ is a homeomorphism. First of all, because $\pi|_{g(U_x)}$ is an open map (cf. lemma \ref{lemma: quotients_by_group_actions_are_open}), it will suffice to show that it is bijective to show that it is a homeomorphism (cf. lemma \ref{lemma: bijective_continuous_open_maps_are_homeomorphisms}); in fact, we will only need to show that $\pi|_{g(U_x)}$ is injective, since it is already surjective by virtue of being a quotient map. To that end, consider any two points $x', x'' \in g(U_x)$ such that $\pi(x') = \pi(x'')$, which means that there exists $x', x'$ are both in the $G$-orbit of some $x_0 \in g(U_x)$, i.e. there exists $g', g'' \in G$ such that $x' = g' x_0$ and $x'' = g'' x_0$. But this means that:
+                        $$\pi(x_0) = (g')^{-1}\pi(x') = (g'')^{-1}\pi(x'')$$
+                    which implies that:
+                        $$(g'')^{-1}(g')^{-1}\pi(x') = \pi(x'')$$
+                    But $\pi(x') = \pi(x'')$, and because the $G$-action on $X$ is \textit{free} by assumption, the above implies that $(g'')^{-1}(g')^{-1} = 1_G$; in turn, this implies that $x' = x''$, because $x' = g' x_0$ and $x'' = g'' x_0$. In turn, this implies that $x' = x''$, and hence $\pi|_{g(U_x)}$ is injective (and thus bijective, and therefore a homeomorphism, as stated above).
+                    
+                    By putting everything together, one sees that every open neighbourhood of any given point $[x] \in X/G$ has the form $\pi(U_x)$, for some open neighbourhood $U_x$ of a point $x \in \pi^{-1}(x)$, and furthermore:
+                        $$\pi^{-1}(\pi(U_x)) \cong \coprod_{g \in G} g(U_x)$$
+                    thanks to the fact that the elements of the set $\{g(U_x)\}_{g \in G}$ are pairwise disjoint, and that $\pi|_{g(U_x)}: g(U_x) \to \pi(U_x)$ is a homeomorphism for all $g \in G$.
+                \end{proof}
+            \begin{lemma}[A criterion for Hausdorff-ness of quotients] \label{lemma: hausdorff_quotient_criterion}
+    	        If $X$ is a Hausdorff toplogical space, $R$ is an equivalence relation on $X$ which is closed inside $X^2$, and if the quotient map $\pi: X \to X/R$ is open, then $X/R$ is once again Hausdorff.
+    	    \end{lemma}
+    	        \begin{proof}
+    	            The quotient map $\pi: X \to X/R$ is open by assumption, so through the definition of the product topology, one gets that the \say{diagonal quotient} $\pi \x \pi: X^2 \to (X/R)^2$ is also open. $R$ is assumed to be a closed subset of $X^2$, and since $\Pi$ is an open map, $(\pi \x \pi)(X^2 \setminus R)$ has to be open inside $(X/R)^2$. We now claim that:
+    	                $$(\pi \x \pi)(X^2 \setminus R) = (X/R)^2 \setminus \Delta_{X/R}$$
+    	            where $\Delta_{X/R}$ is the image of $X/R$ inside $(X/R)^2$ under the diagonal map, i.e. $\Delta_{X/R} = \{(z, z') \in (X/R)^2 \in \mid z = z'\}$; should this be the case, $\Delta_{X/R}$ would have to be closed inside $(X/R)^2$, since we have shown that $(\pi \x \pi)(X^2 \setminus R)$ is open inside $(X/R)^2$, and this would mean that $X/R$ is Hausdorff by definition. To that end, note firstly that:
+    	                $$(x, y) \in X^2 \setminus R \implies \pi(x) \not = \pi(y) \implies (\pi \x \pi)(x, y) \in (X/R)^2 \setminus \Delta_{X/R}$$
+                    which tells us that:
+                        $$(\pi \x \pi)(X^2 \setminus R) \subset (X/R)^2 \setminus \Delta_{X/R}$$
+                    Conversely, consider:
+                        $$
+                            \begin{aligned}
+                                (z, t) \in (X/R)^2 \setminus \Delta_{X/R} & \implies \exists (x, y) \in X^2: ( ((z, t) = (\pi \x \pi)(x, y)) \wedge ((\pi \x \pi)(x, y) \in (X/R)^2 \setminus \Delta_{X/R}) )
+                                \\
+                                & \implies \exists (x, y) \in X^2: ( ((z, t) = (\pi \x \pi)(x, y)) \wedge ((x, y) \not \in R) )
+                                \\
+                                & \implies (z, t) \in (\pi \x \pi)(X^2 \setminus R)
+                            \end{aligned}
+                        $$
+                    which tells us that:
+                        $$(\pi \x \pi)(X^2 \setminus R) \supset (X/R)^2 \setminus \Delta_{X/R}$$
+                    Thus, we have shown that $(\pi \x \pi)(X^2 \setminus R) = (X/R)^2 \setminus \Delta_{X/R}$. As stated, this implies that $X/R$ is Hausdorff.
+    	        \end{proof}
+	        \begin{corollary}[Quotients of Hausdorff spaces by free actions of finite groups are Hausdorff] \label{coro: quotients_of_hausdorff_spaces_by_free_actions_of_finite_groups_are_hausdorff}
+	            If $X$ is a Hausdorff topological space and $G$ is a finite group that acts freely and continuously on $X$. Then the quotient space $X/G$ with respect to the given $G$-action on $X$ will also be Hausdorff.
+	        \end{corollary}
+	            \begin{proof}
+                    
+	            \end{proof}
+            \begin{lemma}[Quotients of real manifolds by free actions of finite groups] \label{lemma: quotients_of_real_manifolds_by_free_actions_of_finite_groups}
+                For some $0 \leq r \leq \infty$, let $M$ be a $C^r$-manifold with a free $C^r$-action from a finite group $\Gamma$. Then the quotient space $M/\Gamma$ will also be a $C^r$-manifold; its structure sheaf is the subsheaf of $\Gamma$-invariant $C^r$-functions on $M$.
+            \end{lemma}
+                \begin{proof}
+                    
+                \end{proof}
+            \begin{proposition}[Quotients of complex manifolds by free actions of finite groups] \label{prop: quotients_of_complex_manifolds_by_free_actions_of_finite_groups}
+                Let $(M, J)$ be a complex manifold with a free and holomorphic action of a finite group $\Gamma$. In such a situation, there is also a uniquely and canonically induced complex structure on the quotient space $M/\Gamma$, which is the restriction of $J$ down to $\Gamma$-invariant sub-bundle $T^{\Gamma}M \subseteq TM$ of the tangent bundle $TM$.
+            \end{proposition}
+                \begin{proof}
+                            
+                \end{proof}
+            \begin{proposition}[Quotients of Riemannian manifolds by free actions of finite groups] \label{prop: quotients_of_riemannian_manifolds_by_free_actions_of_finite_groups}
+                Let $(M, g)$ be a Riemannian manifold with a free and isometric action of a finite group $\Gamma$. The quotient space $M/\Gamma$ then comes equipped with a unique and canonically induced Riemannian metric $g^{\Gamma}$, which is the restriction of the Riemannian metric $g$ from the tangent bundle $TM$ down to the $\Gamma$-invariant sub-bundle $T^{\Gamma}M$, making it a Riemannian manifold.
+            \end{proposition}
+                \begin{proof}
+                            
+                \end{proof}
+            \begin{corollary}[Quotients of Hermitian manifolds by free actions of finite groups] \label{coro: quotients_of_hermitian_manifolds_by_free_actions_of_finite_groups}
+                Let $(M, J, g)$ be a Hermitian manifold with a free, holomorphic, and isometric action of a finite group $\Gamma$. 
+            \end{corollary}
+                \begin{proof}
+                    
+                \end{proof}
+                
+            \begin{definition}[Commensurable subgroups] \label{def: commensurable_subgroups}
+                Let $G$ be a group and let $H_1, H_2 \leq G$ be subgroups thereof. They are called \textbf{commensurable} if and only if $H_1 \cap H_2$ is simultaneously a finite-index subgroup of $H_1$ and $H_2$.
+            \end{definition}
+            \begin{example}
+                Consider $a, b \in \Z$. Then the subgroups $(a), (b) \leq \Z$ are commensurable with one another if and only if $\frac{a}{b} \in \Q^{\x}$.
+            \end{example}
+            \begin{proposition}[Commensurability is an equivalence relation] \label{prop: commensurability_is_an_equivalence_relation}
+                Let $G$ be a group. Commensurability between pairs of subgroups of $G$ is then an equivalence relation on the set of subgroups of $G$.
+            \end{proposition}
+                \begin{proof}
+                    
+                \end{proof}
+            \begin{definition}[Principal congruence subgroups] \label{def: principal_congruence_subgroups}
+                Let $G$ be a linear algebraic group over $\Q$, and fix a closed immersion $G \subset (\GL_n)_{\Q}$ of $\Q$-varieties. For any positive integer $N$, define the \textbf{$N^{th}$ principal congruence subgroup} $\Gamma_G(N) \leq G(\Z)$ as the kernel of the canonically induced group homomorphism $G(\Z) \to G(\Z/N\Z)$. Explicitly, this means that:
+                    $$\Gamma_G(N) := G(\Q) \cap \{g \in \GL_n(\Z) \mid g \equiv 1 \pmod{N}\}$$
+            \end{definition}
+            \begin{definition}[Arithmetic subgroups] \label{def: arithmetic_subgroups}
+                Let $G$ be a semi-simple linear algebraic group over $\Q$. An \textbf{arithmetic subgroup} of $G(\Q)$ is one that is commensurable with a principal congruence subgroup $\Gamma_G(N)$ for some positive integer $N$.
+            \end{definition}
+            \begin{definition}[Covolumes] \label{def: covolumes}
+                Let $G$ be a \say{sufficiently nice} topological group, equipped with a Haar measure $\mu$, and let $\Gamma \leq G$ be a \say{sufficiently nice} subgroup. The \textbf{covolume} of $\Gamma$ with respect to the Haar measure $\mu$ is then given by:
+                    $$\vol(G/\Gamma, \mu) := \int_{G/\Gamma} d\mu$$
+                where now, the Haar measure $\mu$ in the integral is supposed to be understood as the canonically induced $\Gamma$-invariant one coming from the Haar measure on $G$.
+            \end{definition}
+            \begin{remark}
+                Not all arithmetic subgroups of a given linear algebraic group over $\Q$ is necessary of finite covolume. For instance, $\Z/2 \leq \GL_1(\Q)$ certainly has infinite covolume.
+            \end{remark}
             
     \subsection{Construction of Shimura varieties}    
-        \subsubsection{Congruence subgroups and connected Shimura varieties}
+        \subsubsection{Connected Shimura varieties}
             \begin{definition}[The Deligne torus] \label{def: the_deligne_torus}
-                The \textbf{Deligne torus}, which we shall denote by $\bbS_{\R}$, is the restriction of scalars\footnote{For this definition, recall that there is an adjoint equivalence (via the adjunction $\Gamma \ladjoint \Spec$) between the category of affine group $\bbC$-schemes and that of commutative Hopf $\bbC$-algebras, which we can apply the restriction of scalars functor $\Res^{\bbC}_{\R}$ to.} $\Res^{\bbC}_{\R} (\G_m)_{\bbC} := \Spec \Res^{\bbC}_{\R} \Gamma((\G_m)_{\bbC}, \calO_{(\G_m)_{\bbC}})$ of the multiplicative group $\bbC$-scheme $(\G_m)_{\bbC}$ down to $\R$. A \textbf{Deligne cocharacter} of a group $\R$-scheme $H$ is a morphism of group $\R$-schemes $h: \bbS_{\R} \to H^{\ad}$; the set of Deligne cocharacters of a given group $\R$-scheme $H$ is denoted by $\bbX^*(H)$.
+                The \textbf{Deligne torus}, which we shall denote by $\bbS$, is the restriction of scalars\footnote{For this definition, recall that there is an adjoint equivalence (via the adjunction $\Gamma \ladjoint \Spec$) between the category of affine group $\bbC$-schemes and that of commutative Hopf $\bbC$-algebras, which we can apply the restriction of scalars functor $\Res^{\bbC}_{\R}$ to.} $\Res^{\bbC}_{\R} (\G_m)_{\bbC} := \Spec ( \Res^{\bbC}_{\R} \Gamma((\G_m)_{\bbC}, \calO_{(\G_m)_{\bbC}}) )$ of the multiplicative group $\bbC$-scheme $(\G_m)_{\bbC}$ down to $\R$. A \textbf{Deligne cocharacter} of a group $\R$-scheme $H$ is a morphism of group $\R$-schemes $h: \bbS \to H^{\ad}$; the set of Deligne cocharacters of a given group $\R$-scheme $H$ is denoted by $\bbX^*(H)$.
             \end{definition}
+            \begin{remark}
+                The group $\bbS(\R)$ of $\R$-points of the Deligne torus is nothing but the unitary group $\U_1$ viewed as a real Lie group.
+            \end{remark}
+            \begin{convention}
+                For real and complex Lie groups, a superscript $(-)^+$ shall be used for denoting the identity component.
+            \end{convention}
             \begin{definition}[Connected Shimura data] \label{def: connected_shimura_data}
-                A \textbf{connected Shimura datum} is a pair $(G, X^+)$ consisting of:
+                A \textbf{connected Shimura datum} (over $\Q$) is a pair $(G_{\Q}, X^+)$ consisting of:
                     \begin{enumerate}
-                        \item a connected semi-simple group $\Q$-scheme, and
-                        \item a $G^{\ad}(\R)^+$-conjugacy class $X^+$ of Deligne cocharacters of $G^{\ad}_{\R}$ (i.e. $X^+$ is a subset of the $G^{\ad}(\R)^+$-fixed point set $\bbX^*(G^{\ad}_{\R})^{G^{\ad}(\R)^+}$ with respect to the conjugation action) satisfying the following axioms:
+                        \item a semi-simple group $\Q$-scheme $G_{\Q}$, and
+                        \item a $G^{\ad}_{\Q}(\R)^+$-conjugacy class $X^+$ of Deligne cocharacters of $G^{\ad}_{\R}$ (i.e. $X^+$ is a subset of the $G_{\Q}^{\ad}(\R)^+$-fixed point set $\bbX^*(G^{\ad}_{\R})^{G^{\ad}(\R)^+}$ with respect to the conjugation action) satisfying the following axioms:
                             \begin{itemize}
-                                \item For any $h \in X^+$ 
-                                \item 
+                                \item For any $h \in X^+$, the Hodge structure on $\g^+ := \Lie(G_{\Q}(\R)^+)$ defined via the composition:
+                                    $$
+                                        \begin{tikzcd}
+                                        	\bbS(\R) & {G^{\ad}_{\R}(\R)^+} & {\GL(\g^+_{\bbC})}
+                                        	\arrow["h_{\R}", from=1-1, to=1-2]
+                                        	\arrow["\ad", from=1-2, to=1-3]
+                                        \end{tikzcd}
+                                    $$
+                                of $h_{\R}: \bbS(\R) \to G^{\ad}_{\R}(\R)^+$ followed by the adjoint representation $\ad: G^{\ad}_{\R}(\R)^+ \to \GL(\g^+_{\bbC})$ of $G^{\ad}(\R)^+$ on $\g^+_{\bbC} \cong \g^+ \tensor_{\R} \bbC$.
+                                is required to be of type $\{(-1, 1), (0, 0), (1, -1)\}$.
+                                \item For any $h \in X^+$, the element\footnote{Observe that we have chosen isomorphisms $\bbS(\R) \cong \U_1 \cong \bbC^{\x}$ along with the canonical basis $\{1, i\}$ for $\bbC$ as a $2$-dimensional $\R$-vector space.} $\ad(h(i)) \in \GL(\g^+_{\bbC})$ is a Cartan involution of $G^{\ad}_{\R}(\R)^+$.
+                                \item For all $h \in X^+$, there exists no $\Q$-simple Jordan-H\"older factor $H_{\Q} \leq G_{\Q}^+$ for which the composition:
+                                    $$
+                                        \begin{tikzcd}
+                                        	\bbS & {G^{\ad}_{\R}} & {H^{\ad}_{\R}}
+                                        	\arrow["h", from=1-1, to=1-2]
+                                        	\arrow["", from=1-2, to=1-3]
+                                        \end{tikzcd}
+                                    $$
+                                is trivial.
                             \end{itemize}
                     \end{enumerate}
             \end{definition}
-            \begin{definition}[Principal congruence subgroups] \label{def: principal_congruence_subgroups}
-                Let $G$ be a semi-simple linear algebraic group over $\Q$, and fix a closed immersion $G \subset (\GL_n)_{\Q}$ of $\Q$-varieties. For any positive integer $N$, define the \textbf{$N^{th}$ principal congruence subgroup} $\Gamma_G(N) \leq G(\Z)$ as the kernel of the canonically induced group homomorphism $G(\Z) \to G(\Z/N\Z)$. Explicitly, this means that:
-                    $$\Gamma_G(N) := G(\Q) \cap \{g \in \GL_n(\Z) \mid g \equiv 1 \pmod{N}\}$$
+            \begin{lemma}
+                
+            \end{lemma}
+                \begin{proof}
+                    
+                \end{proof}
+            \begin{proposition}
+                
+            \end{proposition}
+                \begin{proof}
+                    
+                \end{proof}
+            \begin{example}[Moduli space of complex elliptic curves]
+                Let $\frakH$ be the Poicar\'e upper half-plane as in example \ref{example: upper_half_plane_is_a_symmetric_space} and consider the \textit{a priori} semi-simple \textit{connected} group $\Q$-scheme $(\SL_2)_{\Q}$; since it is connected, the Lie algebra of its identity component is nothing but $\sl_2(\R) \cong \Lie(\SL_2(\R))$. We claim that the pair $(\frakH, (\SL_2)_{\Q})$ makes up a connected Shimura datum, namely that of the moduli space of complex elliptic curves.
+            \end{example}
+            \begin{example}[Moduli space of complex elliptic curves with level structures]
+                
+            \end{example}
+            \begin{definition}[Connected Shimura varieties] \label{def: connected_shimura_varieties}
+                
             \end{definition}
+            
+        \subsubsection{Shimura varieties of type PEL: moduli spaces of abelian varieties}
     
         \subsubsection{Shimura varieties of Hodge type: moduli spaces of Hodge structures}
         
-        \subsubsection{Shimura varieties of type PEL: moduli spaces of abelian varieties}
+        \subsubsection{Shimura varieties of abelian type}
         
         \subsubsection{General Shimura varieties}
         

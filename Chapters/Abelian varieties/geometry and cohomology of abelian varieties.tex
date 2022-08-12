@@ -53,7 +53,94 @@
                     $$\rho_{E_{\bbC}, \bar{\Q}_{\ell}}: \Gal(\bar{K}/K) \to \GL_2(\bar{\Q}_{\ell})$$
             \end{remark}
             
-            Now, in order to generalise proposition \ref{prop: uniformisations_of_complex_abelian_varieties} to cases wherein the underlying base scheme is arbitrary and not just $\Spec \bbC$, we shall need to prove the so-called \textbf{Rigidity Theorems}.
+            Now, in order to generalise proposition \ref{prop: uniformisations_of_complex_abelian_varieties} to cases wherein the underlying base scheme is arbitrary and not just $\Spec \bbC$, we shall need to prove the so-called \textbf{Rigidity Theorems}, which are scheme-theoretic analogues of the fact that bounded and globally holomorphic functions are necessarily constant.
+            \begin{theorem}[Rigidity I] \label{theorem: rigidity_theorem_for_abelian_varieties_1}
+                Let $\pi: X \to S$ be a proper and flat morphism of schemes such that\footnote{I.e. the morphism $\pi: X \to S$ is pointwise constant.} $\kappa_s \cong H^0_{\Zar}(X_s, \calO_{X_s})$ for all $s \in |S|$. Then the canonically defined $\calO_S$-linear map $\pi^{\sharp}: \calO_S \to \pi_*\calO_X$ will be an isomorphism.
+            \end{theorem}
+                \begin{proof}
+                    
+                \end{proof}
+            \begin{corollary}[Liouville's theorem on entire functions for schemes] \label{coro: liouville_theorem_on_entire_functions_for_schemes}
+                Let $\pi: X \to S$ be a proper and flat morphism of schemes such that $\kappa_s \cong H^0(X_s, \calO_{X_s})$ for all $s \in |S|$. For all affine morphisms $f: T \to S$ for which there exists a factorisation:
+                    $$
+                        \begin{tikzcd}
+                        	& X \\
+                        	T & S
+                        	\arrow["\pi", from=1-2, to=2-2]
+                        	\arrow["f", from=2-1, to=2-2]
+                        	\arrow["\varphi"', dashed, from=1-2, to=2-1]
+                        \end{tikzcd}
+                    $$
+                the morphism of $S$-schemes $\varphi: X \to T$ is necessarily constant.
+            \end{corollary}
+                \begin{proof}
+                    
+                \end{proof}
+            \begin{remark}
+                When $S$ is the spectrum of a field, the assumption that $\kappa_s \cong H^0(X_s, \calO_{X_s})$ for all $s \in |S|$ is equivalent to the assumption that the morphism $f_s: X_s \to \Spec \kappa_s$ is geometrically integral at all $s \in |S|$.
+            \end{remark}
+            A main ingredient for the second Rigidity Theorem is Zariski's Main Theorem, which asserts that quasi-finite and separated morphisms over a qcqs base factors into a quasi-compact open immersion followed by a finite morphism.
+            \begin{lemma}[Zariski's Main Theorem] \label{lemma: zasriski_main_theorem}
+                \cite[\href{https://stacks.math.columbia.edu/tag/05K0}{Tag 05K0}]{stacks} Let $S$ be a qcqs scheme and let $f: T \to S$ be a quasi-finite and separated morphism. This morphism factors into a quasi-compact open immersion $j: T \to X$ followed by a finite morphism $\pi: X \to S$ as follows:
+                    $$
+                        \begin{tikzcd}
+                        	& X \\
+                        	T & S
+                        	\arrow["f"', from=2-1, to=2-2]
+                        	\arrow["j", hook, from=2-1, to=1-2]
+                        	\arrow["\pi", from=1-2, to=2-2]
+                        \end{tikzcd}
+                    $$
+            \end{lemma}
+                \begin{proof}
+                    
+                \end{proof}
+            \begin{proposition}[Finite = proper + finite fibres] \label{lemma: finite_iff_proper_with_finite_fibres}
+                
+            \end{proposition}
+                \begin{proof}
+                    
+                \end{proof}
+            \begin{corollary}
+                
+            \end{corollary}
+                \begin{proof}
+                    
+                \end{proof}
+            \begin{theorem}[Rigidity II] \label{theorem: rigidity_theorem_for_abelian_varieties_2}
+                \cite[\href{https://stacks.math.columbia.edu/tag/0AH8}{Tag 0AH8}]{stacks} Consider a commutative diagram of schemes:
+                    $$
+                        \begin{tikzcd}
+                        	& X \\
+                        	T & S
+                        	\arrow["\pi", from=1-2, to=2-2]
+                        	\arrow["f", from=2-1, to=2-2]
+                        	\arrow["\varphi"', from=1-2, to=2-1]
+                        \end{tikzcd}
+                    $$
+                wherein $\pi: X \to S$ is proper, $f: T \to S$ is separated and locally of finite type, and the scheme-theoretic image of $\varphi_s: X_s \to T_s$ is finite over $S$. In such a situation, there exists a Zariski-open neighbourhood $U \ni s$ such that there exists a factorisation as follows:
+                    $$
+                        \begin{tikzcd}
+                        	Z & {X_U} \\
+                        	{T_U}
+                        	\arrow["\varphi", from=1-2, to=2-1]
+                        	\arrow[hook, from=1-1, to=2-1]
+                        	\arrow[dashed, from=1-2, to=1-1]
+                        \end{tikzcd}
+                    $$
+                of $\varphi_U: X_U \to T_U$ via a closed subscheme $Z \subseteq T_U$ that is finite over $U$.
+            \end{theorem}
+                \begin{proof}
+                    
+                \end{proof}
+            \begin{corollary}[Abelian schemes are commutative group schemes] \label{coro: abelian_schemes_are_commutative_group_schemes} 
+                Let $A$ be an abelian $S$-scheme. Then $A$ carries a \textit{unqiue} commutative group $S$-scheme structure.
+            \end{corollary}
+                \begin{proof}
+                    
+                \end{proof}
+                
+        \subsubsection{Tangent spaces}
         
         \subsubsection{Cohomology of abelian varieties}
         
