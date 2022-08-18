@@ -1,0 +1,201 @@
+\section{Perfectoid spaces}
+    \subsection{The category of perfectoid spaces}
+        \subsubsection{Perfectoid rings and almost purity for perfectoid algebras}
+        
+        \subsubsection{Perfectoid adic spaces}
+        
+    \subsection{Almost purity for perfectoid spaces}
+        \subsubsection{\'Etale morphisms of perfectoid spaces}
+            \begin{definition}[Injections and surjections between perfectoid spaces] \label{def: injections_and_surjections_between_perfectoid_spaces}
+                A morphism $Y \to X$ of perfectoid spaces is said to be \textbf{injective} (respectively, \textbf{surjective}) if and only if for all $S \in \Ob(\Perfd)$, the corresponding map of points $Y(S) \to X(S)$ is an injective (respectively, surjective) function.
+            \end{definition}
+            \begin{remark}
+                It suffices to check injectivity and surjectivity of morphisms $f: Y \to X$ between perfectoid spaces by consideration of affinoid points, i.e. functions $Y(S) \to X(S)$ where $S$ is an affinoid perfectoid space. 
+            \end{remark}
+            \begin{remark}
+                Isomorphisms of perfectoid spaces are bijective.
+            \end{remark}
+            \begin{example}[Points]
+                Let $X$ be a perfectoid space and let $x \in |X|$ be a point thereof, which we shall view as a morphism of adic spaces $x: \Spa(\hat{\kappa}_x, \hat{\kappa}_x^{\circ}) \to X$; we might as well assume $X$ to be affinoid (in particular, a perfectoid affinoid neighbourhood of $x$) and isomorphic to $\Spa(R, R^+)$ for some perfectoid Huber pair $(R, R^+)$. Then the morphism $x: \Spa(\hat{\kappa}_x, \hat{\kappa}_x^{\circ}) \to \Spa(R, R^+)$ is injective (and hence points inject into general perfectoid spaces).
+            \end{example}
+            \begin{proposition}[An injectivity/surjectivity criterion] \label{prop: an_injectivity_surjectivity_criterion_for_morphisms_of_perfectoid_sapces}
+                \cite[Proposition 5.3]{scholze2021diamond} Let $f: Y \to X$ be a morphism perfectoid spaces. The following are equivalent:
+                    \begin{enumerate}
+                        \item $f: Y \to X$ is injective (respectively, surjective).
+                        \item The underlying map of topological spaces $|f|: |Y| \to |X|$ is injective (respectively, surjective) and for all points $y \in |Y|$ which corresponds to a rank-$1$ valuation and lies over some $x := |f|(y) \in |X|$, the corresponding ring map $\hat{\kappa}_x \to \hat{\kappa}_y$ between the completed residue fields is an isomorphism of non-archimedean fields. 
+                        \item For any perfectoid field $K$ and any open and bounded subring $K^+ \subset K$ therein, the induced map of $(K, K^+)$-points $f_*(K, K^+): Y(K, K^+) \to X(K, K^+)$ is injective (respectively, surjective). 
+                        \item If the given perfectoid spaces $Y, X$ are also qcqs, then the following is also equivalent to the previous three statements: for all algebraically closed perfectoid fields $C$ and any choice $C^+ \subset C$ of a bounded and open subring therein, the induced map of $(C, C^+)$-points $f_*(C, C^+): Y(C, C^+) \to X(C, C^+)$ is injective (respectively, surjective). 
+                    \end{enumerate}
+            \end{proposition}
+                \begin{proof}
+                            
+                \end{proof}
+            \begin{corollary}[Injections are stable under base-changes] \label{coro: injections_are_stable_under_base_changes}
+                Let $\iota: Z \to X$ be an injection of perfectoid spaces and let $f: X' \to X$ be an arbitrary morphism of perfectoid spaces. Then, the canonical projection $\iota': Z' \to X'$ from the pullback $Z' := Z \x_{\iota, X, f} X'$ (which exists in $\Perfd$ \textit{a priori}) will also be an injection of perfectoid spaces; at the same time, the underlying projection between topological spaces $|\iota'|: |Z'| \to |X|$ will be a homeomorphism. 
+                
+                As a consequence, a morphism of perfectoid spaces is injective if and only if it is universally injective.
+            \end{corollary}
+            
+            Let us now use the notion of injections of perfectoid spaces to study the separatedness of morphisms of perfectoid spaces, which is a task reliant on whether or not the diagonal is - in some apropriate sense - a closed immersion. 
+            \begin{definition}[Immersions of perfectoid spaces] \label{def: immersions_of_perfectoid_spaces}
+                A morphism of perfectoid spaces $\iota: Z \to X$ is an \textbf{(open/closed) immersion} if and only if it is injective and the underlying map of topological spaces $|\iota|: |Z| \to |X|$ is a locally closed (respectively, open/closed) immersion.
+            \end{definition}
+            \begin{remark}[Immersions of general adic spaces] \label{remark: immersions_of_general_adic_spaces} 
+                Definition \ref{def: immersions_of_perfectoid_spaces} does not translate \textit{verbatim} to either the setting of schemes or that of adic spaces, as there, one needs to worry about the existence of nilpotent elements. 
+            \end{remark}
+            Remark \ref{remark: immersions_of_general_adic_spaces} prompts the following notions:
+            \begin{definition}[Zariski-closed morphisms] \label{def: zariski_closed_morphisms}
+                An immersion of affinoid perfectoid spaces $f: \Spa(S, S^+) \hookrightarrow \Spa(R, R^+)$ is said to be:
+                    \begin{enumerate}
+                        \item \textbf{Zariski-closed} if and only if there exists a homeomorphism $|Z| \cong |\Spec R/I|$ for some ideal $I \subset R$.
+                        \item \textbf{strongly Zariski-closed} if and only if the corresponding ring map $R \to S$ is surjective and $S^+/R^+$ is the integral closure of $R^+$ inside $S$.
+                    \end{enumerate}
+            \end{definition}
+            \begin{proposition}[Zariski-closed implies strongly Zariski-closed] \label{prop: zariski_closed_implies_strongly_zariski_closed}
+                For immersions of affinoid perfectoid spaces $f: Z \hookrightarrow X$, being Zariski-closed strictly implies being strongly Zariski-closed.
+            \end{proposition}
+                \begin{proof}
+                    
+                \end{proof}
+            \begin{remark}[Perfectoid spaces as geometric stacks ?] 
+                Let us firstly recall the following definition of schemes: a scheme over a commutative ring $k$ is a sheaf $X \in \Ob(\Sh((\Spec k)_{\Zar}))$ such that the diagonal $\Delta_{X/k}: X \to X \x_{\Spec k} X$ is representable by affine $k$-schemes, and such that it admits a cover by Zariski-open immersions $U \hookrightarrow X$ from affine $k$-schemes $U$.
+                
+                In the sequel, we shall attempt to re-conceptualise perfectoid spaces in this manner. Specifically, we shall see that in fact, perfectoid spaces are sheaves $X \in \Ob(\Sh(\Perfd^{\aff}_{\an}))$ such that the diagonal $\Delta_X: X \to X \x X$ is representable by affinoid perfectoid spaces, and such that it admits a cover by rational open immersions $U \hookrightarrow X$ from affinoid perfectoid open adic subspaces. 
+            \end{remark}
+            \begin{definition}[Representable morphisms of perfectoid spaces] \label{def: representable_morphisms_of_perfectoid_spaces}
+                A morphism $f: \scrY \to \scrX$ of sheaves of sets on $\Perfd^{\affd}_{\an}$ is said to be \textbf{representable by affinoids} if and only if for all morphisms $u: U \to \scrX$ from an affinoid perfectoid space $U$, the pullback $\scrX \x_{f, \scrY, u} U$ is also an affinoid perfectoid space. 
+            \end{definition}
+            \begin{lemma}[Diagonals of perfectoid spaces are representable by affinoids] \label{lemma: diagonals_of_perfectoid_spaces_are_representable_by_affinoids}
+                Let $f: Y \to X$ be a morphism of perfectoid spaces. Then, the diagonal $\Delta_{Y/X}: Y \to Y \x_X Y$ is representable by affinoid perfectoid spaces.
+            \end{lemma}
+                \begin{proof}
+                    
+                \end{proof}
+            \begin{corollary}
+                As affinoid perfectoid Huber pairs are sheafy, perfectoid spaces over a fixed base perfectoid space $S$ are sheaves $X \in \Ob(\Sh((\Perfd^{\aff}_{/S})_{\an}))$ such that the diagonal $\Delta_{X/S}: X \to X \x_S X$ is representable by affinoid perfectoid spaces, and such that it admits a cover by rational open immersions $U \hookrightarrow X$ from affinoid perfectoid open adic subspaces over $S$. 
+            \end{corollary}
+            \begin{remark}
+                The category of perfectoid spaces lacks terminal objects (unlike the category schemes or that of adic spaces, which both have $\Spec \Z$ as a terminal object). As such, one can not simply view any given perfectoid space $X$ as a morphism whose codomain is some absolute base perfectoid space and then try to distinguish perfectoid spaces among sheaves of sets on $\Perfd^{\affd}_{\an}$, but can only do so for relative perfectoid spaces. This turns out to actually a problem in practice, as often one works with - for instance - perfectoid spaces over $\Spa(\Q_p, \Z_p)$ (e.g. the Fargues-Fontaine Curve), which is certainly not a perfectoid space since $\Q_p$ does not contain all $p^{th}$ power roots.
+            \end{remark}
+            \begin{proposition}[Diagonals of perfectoid spaces are immersions] \label{prop: diagonals_of_perfectoid_spaces_are_immersions} 
+                Let $f: Y \to X$ be a morphism of perfectoid spaces. Then, the diagonal $\Delta_{Y/X}: Y \to Y \x_X Y$ is an immersion.
+            \end{proposition}
+                \begin{proof}
+                    
+                \end{proof}
+            \begin{definition}[Separated perfectoid spaces] \label{def: separated_perfectoid_spaces}
+                A morphism of perfectoid spaces $f: Y \to X$ is called \textbf{separated} if and only if its diagonal $\Delta_{Y/X}: Y \to Y \x_X Y$ is a rational closed immersion (in the sense of definition \ref{def: immersions_of_perfectoid_spaces}).
+            \end{definition}
+            \begin{remark}
+                As it turns out, there is a valuative criterion for separatedness in the setting of perfectoid spaces as well. The difference from the valuative criterion for separatedness of schemes is minimal, at least from the conceptual standpoint, so before we establish the result for perfectoid spaces, let us review the classical one for schemes.
+                
+                To that end, recall that if $f: Y \to X$ is a quasi-separated morphism of schemes, then it is separated if and only if for all non-archimedean fields $K$ and all commutative diagrams of the following form, wherein the arrow $\Spec K \to \Spec K^{\circ}$ is the canonical one:
+                    $$
+                        \begin{tikzcd}
+                        	{\Spec K} & Y \\
+                        	{\Spec K^{\circ}} & X
+                        	\arrow["f", from=1-2, to=2-2]
+                        	\arrow[from=1-1, to=2-1]
+                        	\arrow[from=2-1, to=2-2]
+                        	\arrow[from=1-1, to=1-2]
+                        \end{tikzcd}
+                    $$
+                there exists at most one lifting $\Spec K^{\circ} \to Y$ (the dashed arrow) fitting into the aforementioned commutative square as follows:
+                    $$
+                        \begin{tikzcd}
+                        	{\Spec K} & Y \\
+                        	{\Spec K^{\circ}} & X
+                        	\arrow["f", from=1-2, to=2-2]
+                        	\arrow[from=1-1, to=2-1]
+                        	\arrow[from=2-1, to=2-2]
+                        	\arrow[from=1-1, to=1-2]
+                        	\arrow[dashed, from=2-1, to=1-2]
+                        \end{tikzcd}
+                    $$
+            \end{remark}
+            \begin{theorem}[A valuative criterion for separatedness] \label{theorem: valuative_criterion_for_separatedness_for_morphisms_of_perfectoid_spaces}
+                Let $f: Y \to X$ be a morphism of perfectoid spaces. The following are equivalent:
+                    \begin{enumerate}
+                        \item $f: Y \to X$ is separated.
+                        \item The map of topological spaces $|\Delta_{Y/X}|: |Y| \to |Y \x_X Y|$ underlying the diagonal $\Delta_{Y/X}$ is a closed immersion.
+                        \item $f: Y \to X$ is quasi-separated, and for all perfectoid fields $K$ chosen along with a fixed open and bounded subring $K^+ \subset K$, and for all commutative diagrams of the following form, wherein the arrow $\Spa(K, K^{\circ}) \to \Spa(K, K^+)$ is the canonical one:
+                            $$
+                                \begin{tikzcd}
+                                	{\Spa(K, K^{\circ})} & Y \\
+                                	{\Spa(K, K^+)} & X
+                                	\arrow["f", from=1-2, to=2-2]
+                                	\arrow[from=1-1, to=2-1]
+                                	\arrow[from=2-1, to=2-2]
+                                	\arrow[from=1-1, to=1-2]
+                                \end{tikzcd}
+                            $$
+                        there exists at most one lifting $\Spa(K, K^+) \to Y$ (the dashed arrow) fitting into the aforementioned commutative square as follows:
+                            $$
+                                \begin{tikzcd}
+                                	{\Spa(K, K^{\circ})} & Y \\
+                                	{\Spa(K, K^+)} & X
+                                	\arrow["f", from=1-2, to=2-2]
+                                	\arrow[from=1-1, to=2-1]
+                                	\arrow[from=2-1, to=2-2]
+                                	\arrow[from=1-1, to=1-2]
+                                	\arrow[dashed, from=2-1, to=1-2]
+                                \end{tikzcd}
+                            $$
+                    \end{enumerate}
+            \end{theorem}
+                \begin{proof}
+                    \noindent
+                    \begin{enumerate}
+                        \item 
+                        \item 
+                        \item 
+                    \end{enumerate}
+                \end{proof}
+            
+            We now move on to the topic of \'etale morphisms of perfectoid spaces. Note that this is a deceptively and surprisingly tricky notion, since there does not exist a good theory of tangent spaces, cotangent complexes, or even a sufficiently reasonable notion of dimension for perfectoid spaces (meaning that for instance, one can not simply declare that \'etale morphism are smooth morphisms of relative dimension $0$). Instead, we are going to characterise \'etale morphism of perfectoid spaces as those which somehow \say{behave} similarly to local homeomorphisms of topological spaces. 
+            
+            We begin with the following important result from \cite{scholze2011perfectoid}, which helps us guarantee that definition \ref{def: finite_etale_morphisms_of_perfectoid_spaces} makes sense, as well as that for morphisms between perfectoid spaces, being finite-\'etale is a strictly weaker notion than being \'etale\footnote{The same is true for schemes, where a morphism is finite-\'etale if and only if it is a (non-empty ?) finite coproduct of \'etale morphisms.}.
+            \begin{theorem}[Scholze's perfectoid version of Falting's Almost Purity Theorem] \label{theorem: almost_purity_perfectoid_version}
+                Let $R$ be a perfectoid ring\footnote{Which we might as well assume to be of mixed characteristic $(0, p)$, for some prime $p$.}. Then:
+                    \begin{enumerate}
+                        \item For $R$-algebras, being finite-\'etale implies being perfectoid.
+                        \item There is an equivalence of categories:
+                            $$(-)^{\flat}: \{\text{Finite-\'etale $R$-algebras}\} \to \{\text{Finite-\'etale $R^{\flat}$-algebras}\}$$
+                        \item For any finite-\'etale $R$-algebra $S$, the subring $S^{\circ} \subseteq S$ of power-bounded elements of $S$ is almost finite-\'etale over the subring $R^{\circ} \subseteq R$ of power-bounded elements of $R$.
+                    \end{enumerate}
+            \end{theorem}
+                \begin{proof}
+                    \noindent
+                    \begin{enumerate}
+                        \item 
+                        \item 
+                        \item 
+                    \end{enumerate}
+                \end{proof}
+            Being finite-\'etale for morphisms between perfectoid spaces is an entirely local phenomenon, so let us simply state it for morphisms between affinoid perfectoid spaces.
+            \begin{definition}[Finite-\'etale morphisms of perfectoid spaces] \label{def: finite_etale_morphisms_of_perfectoid_spaces}
+                A morphism $f: \Spa(S, S^+) \to \Spa(R, R^+)$ of affinoid perfectoid spaces is \textbf{finite-\'etale} if and only if the corresponding ring map $R \to S$ is finite-\'etale and $S^+/R^+$ is the integral closure of $R^+$ inside $S$.  
+            \end{definition}
+            Likewise, the following notion is also a local one, so it suffices to only define it for affinoid perfectoid spaces.
+            \begin{definition}[Strongly finite-\'etale morphisms of perfectoid spaces] \label{def: strongly_finite_etale_morphisms_of_perfectoid_spaces}
+                
+            \end{definition}
+            \begin{definition}[\'Etale morphisms of perfectoid spaces] \label{def: etale_morphisms_of_perfectoid_spaces}
+                A morphism $f: Y \to X$ between perfectoid spaces is said to be \textbf{\'etale} if and only if for all $y \in |Y|$, there exist open neighbourhoods $U \ni f(y)$ and $U \supseteq V \ni y$ along with a factorisation of the restriction $f|_V: V \to U$ as follows, wherein $\iota: V \hookrightarrow W$ is an open immersion and $\pi: W \to U$ is finite-\'etale:
+                    $$
+                        \begin{tikzcd}
+                        	& Y \\
+                        	V & U
+                        	\arrow["\iota", hook, from=2-1, to=1-2]
+                        	\arrow["{f|_V}", from=2-1, to=2-2]
+                        	\arrow["\pi", from=1-2, to=2-2]
+                        \end{tikzcd}
+                    $$
+            \end{definition}
+            
+        \subsubsection{The Tilting Equivalence}
+        
+    \subsection{Perfectoid spaces in \texorpdfstring{$p$}{}-adic Hodge theory}
+        \subsubsection{The Hodge-Tate Decomposition using perfectoid spaces}
+        
+        \subsubsection{Perfectoid Shimura varieties}

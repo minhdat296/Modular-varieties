@@ -1,0 +1,125 @@
+\section{\texorpdfstring{$p$}{}-divisible groups}
+    \subsection{\texorpdfstring{$p$}{}-divisible groups}
+        \subsubsection{Universal covers of \texorpdfstring{$p$}{}-divisible groups}
+            \begin{definition}[$p$-divisible groups] \label{def: p_divisible_groups}
+                Fix a prime $p$. A \textbf{$p$-divisible group} (also called a \textbf{Barsotti-Tate group}) of \textbf{height} $h \geq 0$ associated to a finite flat group scheme $G$ over a scheme $S$, such that $|G[p^n](T)| = p^{nh}$ for all $n \in \N$ and all $S$-schemes $T$, is the $\N$-filtered colimit:
+                    $$G[p^{\infty}] := \underset{n \in \N}{\colim} G[p^n]$$
+            \end{definition}
+            \begin{example}
+                Let $p$ be a prime. The colimit $\mu_{p^{\infty}}$ of the tower $1 \leq \mu_p \leq \mu_{p^2} \leq ...$ of groups of $p^{th}$ power roots of unity, wherein the transition morphisms are the canonical embeddings,is a $p$-divisible group of height $1$. 
+            \end{example}
+            \begin{example}
+                Fix any $h \in \N$ along with a prime $p$, and consider the following $\N$-filtered diagram of constant group schemes, wherein the transition morphisms are multiplication-by-$p$ maps:
+                    $$
+                        \begin{tikzcd}
+                        	1 & {(\Z/p\Z)^h} & {(\Z/p^2\Z)^h} & \cdots
+                        	\arrow["{\cdot p}", from=1-2, to=1-3]
+                        	\arrow["{\cdot p}", from=1-3, to=1-4]
+                        	\arrow["{\cdot p}", from=1-1, to=1-2]
+                        \end{tikzcd}
+                    $$
+                The colimit of this diagram is a $p$-divisible group of height $h$.
+            \end{example}
+            \begin{remark}
+                $p$-divisible groups $\frakG := G[p^{\infty}]$ over a base scheme $S$ (for some finite flat group $S$-scheme $G$) are group objects of the sheaf topos $\Sh(S_{\fppf}^{p\-\nilp})$ of $S$-schemes on which $p$ is nilpotent. Aside from minor set-theoretic issues, this is a rather trivial statement, since each of the $p^n$-torsion $S$-subgroup $G[p^n] \leq G$ is \textit{a priori} a group object of $\Sh(S_{\fppf})$, and hence of $\Sh(S_{\fppf}^{p\-\nilp})$, and since sheaf topoi are cocomplete\footnote{This is where size becomes an issue, since large topoi might not admit a sheafification functor from the presheaf topos over the underlying (large) site. We ignore these problems because we are not logicians. In practice, one restricts one's attention to $p$-divisible groups constructed from affine finite flat group schemes over affine base schemes.}. Note that for all $T \in \Ob((\Sch_{/S})_{\fppf})$ and all $T' \in \Ob((\Sch_{/S}^{p\-\nilp})_{\fppf})$, and for all $n \in \N$, one indeed has $G[p^n](T) \cong G[p^n](T')$, since having $p^n$-torsion implies $p$ being nilpotent.
+            \end{remark}
+            \begin{lemma}[Extensions of \'etale finite flat groups by connected finite flat groups] \label{lemma: extensions_of_etale_finite_flat_groups_by_connected_finite_flat_groups}
+                Let $K/\Q_p$ be a non-archimedean extension and consider a short exact sequence of flat group $K^{\circ}$-schemes as follows, wherein $H$ is finite over $\Spec K^{\circ}$ and connected, $Q$ is finite-\'etale over $\Spec K^{\circ}$, and $G$ is unique up to $K$-isogenies (i.e. $G_K$ is unique only up to isomorphisms of group $K$-schemes):
+                    $$
+                        \begin{tikzcd}
+                        	1 & H & G & Q & 1
+                        	\arrow[from=1-1, to=1-2]
+                        	\arrow[from=1-2, to=1-3]
+                        	\arrow[from=1-3, to=1-4]
+                        	\arrow[from=1-4, to=1-5]
+                        \end{tikzcd}
+                    $$
+                Then $G$ will also be finite as a $K^{\circ}$-scheme.
+            \end{lemma}
+                \begin{proof}
+                        
+                \end{proof}
+            \begin{corollary}[Extensions of \'etale $p$-divisible groups by connected $p$-divisible groups] \label{coro: extensions_of_etale_p_divisible_groups_by_connected_p_divisible_groups}
+                Let $K/\Q_p$ be a non-archimedean extension, let $H$ be a connected $p$-divisible $K^{\circ}$-group, and let $Q$ be an \'etale $p$-divisible $K^{\circ}$-group. Then, the extension of $Q$ by $H$ (up to $K$-isogenies), as group objects of $\Sh((\Spec K^{\circ})_{\fppf}^{p\-\nilp})$, will be a formal $K^{\circ}$-scheme that is locally topologically of finite presentation. In particular, when $G$ is affine, one has an isomorphism of affine formal $K^{\circ}$-schemes $G[p^{\infty}]^{\wedge} \cong \Spf K^{\circ}[\![x_1, ..., x_N]\!]^{\wedge}$, with $(-)^{\wedge}$ denoting $p$-adic completion; of course, if $K/\Q_p$ is a complete non-archimedean extension, it is simply the case that $G[p^{\infty}] \cong \Spf K^{\circ}[\![x_1, ..., x_N]\!]$.
+            \end{corollary}
+                
+        \subsubsection{Universal vector extensions of \texorpdfstring{$p$}{}-divisible groups}
+        
+        \subsubsection{Dieudonn\'e modules and the classification of \texorpdfstring{$p$}{}-divisible groups}
+            We begin our exposition of Dieudonn\'e theory with a discussion of an auxiliary notion, namely that of $p$-bases.
+            \begin{definition}[$p$-bases] \label{def: p_bases}
+                Fix a ring map $\varphi: R \to S$. A \textbf{$p$-basis} (for some prime\footnote{Typically, one takes $R$ to be a ring of some prime characteristic and $p := \chara R$.} $p$) for $S$ over $R$ relative to $\varphi$ is a subset $\{x_i\}_{i \in I}$ (which is said to be \textbf{$p$-independent} over $R$ relative to $\varphi$) such that its image $\{dx_i\}_{i \in I}$ under the universal derivation $d: S \to \Omega^1_{S/R}$ is a set of generators for the $S$-modules $\Omega^1_{S/R}$. If a $p$-basis for $S$ over $R$ relative to $\varphi$ exists, then we shall say that $S$ is \textbf{$p$-free} over $R$.
+            \end{definition}
+            \begin{remark}[$p$-bases of smooth algebras]
+                If $R \to S$ is a smooth ring map then any $p$-basis $\{x_i\}_{i \in I} \subseteq S$ will in fact give rise to a basis $\{dx_i\}_{i \in I}$ of the $S$-module $\Omega^1_{S/R}$, because in such a situation $\Omega^1_{S/R}$ shall be a (finite) free $S$-module. In particular, for field extensions $k \to K$ (which are \textit{a priori} finite-\'etale and hence smooth), any $p$-basis $\{x_i\}_{i \in I} \subseteq K$ induces a basis $\{dx_i\}_{i \in I}$ for the finite-dimensional $K$-vector space $\Omega^1_{K/k}$. 
+            \end{remark}
+            \begin{proposition}[Existence of $p$-bases] \label{prop: existence_of_p_bases}
+                Fix a prime $p$, let $R$ be an $\F_p$-algebra, and let $\varphi: R \to S$ be a ring map relative to which $S$ is free as an $R$-module. Then $S$ will also be $p$-free over $R$ relative to $\varphi$.
+            \end{proposition}
+                \begin{proof}
+                    
+                \end{proof}
+            \begin{corollary}
+                For any prime $p$, any extension of characteristic-$p$ fields is $p$-free.
+            \end{corollary}
+            \begin{proposition}[$p$-free algebras are reduced and formally smooth] \label{prop: p_free_algebras_are_reduced_and_formally_smooth}
+                Let $k$ be a perfect field of some prime characteristic $p > 0$ and let $\varphi: k \to S$ be a ring map and assume that $S$ is $p$-free over $k$ relative to $\varphi$. Then $S$ will be reduced and formally smooth over $k$.
+            \end{proposition}
+                \begin{proof}
+                    
+                \end{proof}
+            \begin{corollary}[$p$-free algebras are quasi-smooth] \label{coro: p_free_algebras_are_quasi_smooth}
+                Let $\varphi: k \to S$ be a $p$-free ring map from a perfect field $k$ of some prime characteristic $p > 0$. Then its cotangent complex $\L\Omega^{\bullet}_{S/k}$ shall be a perfect complex of $S$-modules which is concentrated in (cohomological) degrees $-1$ and $0$ (cf. \cite[\href{https://stacks.math.columbia.edu/tag/08SL}{Tag 08SL}]{stacks}), i.e. $H^i(\L\Omega^{\bullet}_{k/R}) \cong 0$ for all $i \in \Z \setminus \{-1, 0\}$; in other words, $\varphi: k \to S$ is quasi-smooth.
+            \end{corollary}
+                \begin{proof}
+                    Let $\Frob_{\L\Omega^{\bullet}_{S/k}}: \L\Omega^{\bullet}_{S/R} \to \L\Omega^{\bullet}_{S/R}$ denote the endomorphism of chain complexes of $S$-modules induced by the following commutative square of ring maps, wherein $\Frob_S$ and $\Frob_k$ denote the absolute $p^{th}$ power Frobenii on $S$ and $k$ respectively:
+                        $$
+                            \begin{tikzcd}
+                            	S & S \\
+                            	k & k
+                            	\arrow["\varphi", from=2-1, to=1-1]
+                            	\arrow["\varphi"', from=2-2, to=1-2]
+                            	\arrow["{\Frob_S}", from=1-1, to=1-2]
+                            	\arrow["{\Frob_k}", from=2-1, to=2-2]
+                            \end{tikzcd}
+                        $$
+                    Because $\chara k = p$, the endomorphism $\Frob_{\L\Omega^{\bullet}_{S/k}}$ is homotopic to $0$ (cf. \cite[\href{https://stacks.math.columbia.edu/tag/0G5Z}{Tag 0G5Z}]{stacks}).
+                \end{proof}
+            \begin{proposition}[Localisations of $p$-free algebras] \label{prop: localisations_of_p_free_algebras}
+                
+            \end{proposition}
+                \begin{proof}
+                    
+                \end{proof}
+            \begin{proposition}[Polynomials over $p$-free algebras] \label{prop: polynomials_over_p_free_algebras}
+                
+            \end{proposition}
+                \begin{proof}
+                    
+                \end{proof}
+            \begin{proposition}[Completions $p$-free algebras] \label{prop: completions_of_p_free_algebras}
+            
+            \end{proposition}
+                \begin{proof}
+                    
+                \end{proof}
+            
+            Next, we move on to a brief discussions of formal $p$-adic liftings of $\F_p$-algebras to characteristic $0$, which are to be thought of as formal deformations of said algebras. The point here is that $p$-free algebras over a perfect $\F_p$-algebra (for some prime $p$) - which are quasi-smooth \textit{a priori} (cf. corollary \ref{coro: p_free_algebras_are_quasi_smooth}) - admit formal $p$-adic liftings, and hence are formally smooth over said perfect $\F_p$-algebra.
+            \begin{definition}[Formal liftings of $\F_p$-algebras to characteristic $0$] \label{def: formal_p_adic_liftings_of_characteristic_p_rings}
+                Let $R$ be a perfect $\F_p$-algebra (for some prime $p$). A \textbf{formal $p$-adic lifting} to characteristic $0$ of an $R$-algebra $\varphi: R \to S$ is a $p$-adically complete flat $\Witt(R)$-algebra $\tilde{\varphi}: \Witt(R) \to \tilde{S}$ such that $\varphi = \tilde{\varphi} \tensor_{\Witt(R)} R$ (here, $\Witt(-)$ denotes the $p$-typical Witt vector functor).
+            \end{definition}
+            \begin{remark}
+                Geometrically, a formal $p$-adic lifting to characteristic $0$ of an $\F_p$-algebra $R$ should be thought of as a flat and $p$-adically complete affine formal $\Z_p$-scheme $\Spf \tilde{R}$ (observe that $\Witt(\F_p) \cong \Z_p$) whose special fibre (i.e. the fibre over the point $s: \Spec \F_p \to \Spf \Z_p$) is isomorphic to $\Spec R$, i.e. such that $\Spec R \cong \Spf \tilde{R} \x_{\Spf \Z_p, s} \Spec \F_p$. Going with this line of thinking, one can think of $\Spf \Z_p$ itself as a lift of $\F_p$.
+            \end{remark}
+            \begin{remark}[Truncated formal $p$-adic liftings] \label{remark: truncated_formal_p_adic_liftings}
+                Let $R$ be a perfect $\F_p$-algebra (for some prime $p$) and let $\p \subset \Witt(R)$ be the unique maximal ideal of the ring of $p$-typical Witt vectors associated to $R$. In addition, let $\varphi: R \to S$ be a ring map. Because any formal $p$-adic lifting $\tilde{\varphi}: \tilde{S} \to \Witt(R)$ exists as the colimit in the category of rings of the filtered diagram of modulo-$\p^n$ liftings $\{\varphi_n: S_n \to \Witt_n(R)\}_{n \geq 1}$ (note that $\Witt_n(R) \cong \Witt(R)/\p^n$), the lift $\tilde{\varphi}$ exists if and only if all modulo-$\p^n$ liftings $\varphi_n$ exist. 
+            \end{remark}
+            \begin{proposition}[Existence of lifts of quasi-smooth $\F_p$-algebras] \label{prop: existence_of_lifts_of_quasi_smooth_rings_of_characteristic_p}
+                Let $R$ be a perfect $\F_p$-algebra and let $\varphi: R \to S$ be a quasi-smooth\footnote{E.g. $S$ is $p$-free over $R$ relative to $\varphi$.} morphism of $\F_p$-algebras, for some prime $p$. If, in addition, $\Omega^1_{S/R}$ is projective as an $S$-module, then a formal $p$-adic lifting of $S$ to characteristic $0$ exists. 
+            \end{proposition}
+                \begin{proof}
+                    Per remark \ref{remark: truncated_formal_p_adic_liftings}, it shall suffice to show that for all $n \geq 1$, a modulo-$\p^n$ lifting $\varphi_n: S_n \to \Witt_n(R)$ exists, where $\p \subset \Witt(R)$ is the unique maximal ideal.
+                \end{proof}
+            
+    
+    \subsection{Moduli spaces of \texorpdfstring{$p$}{}-divisible groups}

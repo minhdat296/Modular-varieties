@@ -365,7 +365,7 @@
             For details on quotients of schemes by finite groups, we refer the reader to \cite[Expos\'e V]{SGA1}. For our purposes, we shall only need to keep in mind the following facts: 
                 \begin{enumerate}
                     \item Let $S$ be a base scheme and $Y$ be an $S$-scheme that is either \textit{(quasi-)projective or (quasi-)affine}, and if additionally. If $G$ be a \textit{finite, flat, and locally of finite presentation} group $S$-scheme acting \textit{freely}\footnote{This is to ensure that the $G$-action induces an \'etale equivalence relation on $Y$, since the $G$-action on $Y$ is free if and only if the corresponding homomorphism of sheaves of groups $G \to \Aut_{S_{\et}}(Y)$ is injective.} on $Y$, then the \href{https://stacks.math.columbia.edu/tag/025X}{\underline{algebraic space}} $Y/G$ is a scheme (cf. \cite[\href{https://stacks.math.columbia.edu/tag/07S7}{Tag 07S7}]{stacks}). 
-                    \item If $Y$ is an affine scheme $\Spec A$ then the quotient $Y/G$ will also be affine and will be isomorphic to $\Spec A^G$, thanks to the group-cohomological fact that $H^0(A, G) \cong A^G$. 
+                    \item If $Y$ is an affine scheme $\Spec A$ then the quotient $Y/G$ will also be affine and will be isomorphic to $\Spec A^G$, thanks to the group-cohomological fact that $H^{\circ}(A, G) \cong A^G$. 
                     
                     If $Y$ is (quasi-)projective then $Y/G$ will also be (quasi-)projective.
                 \end{enumerate}
@@ -375,7 +375,7 @@
             If $d$ is any natural number then $\Sigma_d$ shall denote the symmetric group on $d$ elements.
         \end{convention}
         \begin{definition}[Symmetric powers of schemes] \label{def: symmetric_powers_of_schemes}
-            Let $S$ be a base scheme and let $Y$ be an $S$-scheme that is either (quasi-)projective or (quasi-)affine\footnote{In particular, the curve $X$ from convention \ref{conv: automorphic_side_conventions} is projective.}. Then for any $d \geq 1$, the \textbf{$d^{th}$ symmetric power} of $Y$ is the quotient scheme $\Sym^d_S(Y) := Y^d/\underline{\Sigma_d}_{/S}$ of $Y$ by the constant $S$-group scheme\footnote{Cf. \cite[\href{https://stacks.math.columbia.edu/tag/03YW}{Tag 03YW}]{stacks}.} $\underline{\Sigma_d}_{/S}$ with values in the symmetric group $\Sigma_d$ on $d$ elements (note that this group scheme is finite, flat, and locally of finite presentation over $S$, since it is represented by $\coprod_{\sigma \in \Sigma_d} S$); here, $\underline{\Sigma_d}_{/S}$ acts via permutations, which is well-known to be a free action.
+            Let $S$ be a base scheme and let $Y$ be an $S$-scheme that is either (quasi-)projective or (quasi-)affine\footnote{In particular, the curve $X$ from convention \ref{conv: automorphic_side_conventions} is projective.}. Then for any $d \geq 1$, the \textbf{$d^{th}$ symmetric power} of $Y$ is the quotient scheme $\Sym^d_S(Y) := Y^d/\underline{\Sigma_d}_{/S}$ of $Y$ by the constant group $S$-scheme\footnote{Cf. \cite[\href{https://stacks.math.columbia.edu/tag/03YW}{Tag 03YW}]{stacks}.} $\underline{\Sigma_d}_{/S}$ with values in the symmetric group $\Sigma_d$ on $d$ elements (note that this group scheme is finite, flat, and locally of finite presentation over $S$, since it is represented by $\coprod_{\sigma \in \Sigma_d} S$); here, $\underline{\Sigma_d}_{/S}$ acts via permutations, which is well-known to be a free action.
         \end{definition}
         \begin{convention}
             Because the base field $k$ of our curve from convention \ref{conv: automorphic_side_conventions} is fixed, let us write $X^{(d)}$ instead of $\Sym^d_k(X)$ for simplicity.
@@ -563,23 +563,23 @@
         \begin{remark}[The connected-smooth-\'etale short exact sequence] \label{remark: the_connected_smooth_etale_short_exact_sequence}
             For theorem \ref{theorem: sheaf_function_correspondence_for_smooth_groups}, recall that for any scheme $Y$ that is locally of finite type over a field $k$, there exists a maximal $k$-subalgebra $O(Y)$ of $\Gamma(Y, \calO_Y)$ which is \'etale over $k$ (cf. \cite[Proposition 5.44]{milne_algebraic_groups}). We can then define the scheme $\pi_0(Y)$ of \say{connected components} of $Y$ to be $\Spm O(Y)$ and in doing so, we will have obtained a morphism $Y \to \pi_0(Y)$ that is universal among all \'etale $\F_q$-schemes. 
             
-            Let $G$ be a smooth commutative group scheme over $\Spec k$, let $G^0$ be the connected component of the identity thereof (known to be a connected commutative algebraic group over $\Spec k$; cf. \cite[Lemma 3.2]{cunningham_roe_function_sheaf_dictionary_quasi_characters_p_adic_tori}). It is known that the universal morphism $G \to \pi_0(G)$ induces the following short exact sequence of commutative algebraic groups (cf. \cite[Proposition 5.48]{milne_algebraic_groups}), known as the \textbf{connected-smooth-\'etale short exact sequence}:
+            Let $G$ be a smooth commutative group scheme over $\Spec k$, let $G^{\circ}$ be the connected component of the identity thereof (known to be a connected commutative algebraic group over $\Spec k$; cf. \cite[Lemma 3.2]{cunningham_roe_function_sheaf_dictionary_quasi_characters_p_adic_tori}). It is known that the universal morphism $G \to \pi_0(G)$ induces the following short exact sequence of commutative algebraic groups (cf. \cite[Proposition 5.48]{milne_algebraic_groups}), known as the \textbf{connected-smooth-\'etale short exact sequence}:
                 $$
                     \begin{tikzcd}
-                    	0 & {G^0} & G & {\pi_0(G)} & 0
+                    	0 & {G^{\circ}} & G & {\pi_0(G)} & 0
                     	\arrow[from=1-1, to=1-2]
-                    	\arrow["{\iota_{G^0}}", from=1-2, to=1-3]
-                    	\arrow["{\pi_{G^0}}", from=1-3, to=1-4]
+                    	\arrow["{\iota_{G^{\circ}}}", from=1-2, to=1-3]
+                    	\arrow["{\pi_{G^{\circ}}}", from=1-3, to=1-4]
                     	\arrow[from=1-4, to=1-5]
                     \end{tikzcd}
                 $$
             This short exact sequence can be shown (see \cite[Proposition 3.3, Lemma 3.4, and Proposition 3.5]{cunningham_roe_function_sheaf_dictionary_quasi_characters_p_adic_tori}) to induce another short exact sequence of abelian groups as follows:
                 $$
                     \begin{tikzcd}
-                    	0 & {\Char\Shv_{\bar{\Q}_{\ell}}(\pi_0(G))} & {\Char\Shv_{\bar{\Q}_{\ell}}(G)} & {\Char\Shv_{\bar{\Q}_{\ell}}(G^0)} & 0
+                    	0 & {\Char\Shv_{\bar{\Q}_{\ell}}(\pi_0(G))} & {\Char\Shv_{\bar{\Q}_{\ell}}(G)} & {\Char\Shv_{\bar{\Q}_{\ell}}(G^{\circ})} & 0
                     	\arrow[from=1-1, to=1-2]
-                    	\arrow["{\pi_{G^0}^*}", from=1-2, to=1-3]
-                    	\arrow["{\iota_{G^0}^*}", from=1-3, to=1-4]
+                    	\arrow["{\pi_{G^{\circ}}^*}", from=1-2, to=1-3]
+                    	\arrow["{\iota_{G^{\circ}}^*}", from=1-3, to=1-4]
                     	\arrow[from=1-4, to=1-5]
                     \end{tikzcd}
                 $$
@@ -592,12 +592,12 @@
         \begin{lemma}[Grothendieck's Sheaf-Function Correspondence for \'etale commutative group schemes] \label{lemma: sheaf_function_correspondence_for_etale_commutative_group_schemes}
             Suppose that $Q$ is an \'etale commutative algebraic group over $\Spec \F_q$.
             \begin{itemize}
-                \item \cite[Proposition 2.7]{cunningham_roe_function_sheaf_dictionary_quasi_characters_p_adic_tori} There exists a group isomorphism $\ker \trace(\Frob_Q^* \mid -) \cong H^0(\rmW_{\F_q}, H^2(Q_{\bar{\F}_q}, \bar{\Q}_{\ell}^{\x}))$, where $\rmW_{\F_q}$ denotes the cyclic subgroup of $\Gal(\bar{\F}_q/\F_q)$ generated by $\Frob_{\F_q}$. 
+                \item \cite[Proposition 2.7]{cunningham_roe_function_sheaf_dictionary_quasi_characters_p_adic_tori} There exists a group isomorphism $\ker \trace(\Frob_Q^* \mid -) \cong H^{\circ}(\rmW_{\F_q}, H^2(Q_{\bar{\F}_q}, \bar{\Q}_{\ell}^{\x}))$, where $\rmW_{\F_q}$ denotes the cyclic subgroup of $\Gal(\bar{\F}_q/\F_q)$ generated by $\Frob_{\F_q}$. 
                 \item \cite[Remark 2.9]{cunningham_roe_function_sheaf_dictionary_quasi_characters_p_adic_tori} $H^2(Q_{\bar{\F}_q}, \bar{\Q}_{\ell}^{\x})$ is trivial if and only if $Q_{\bar{\F}_q}$ is cyclic.
             \end{itemize}
         \end{lemma}
         \begin{corollary}[Kernels of traces of Frobenii on \'etale group schemes] \label{coro: kernels_of_traces_of_frobenii_on_etale_group_schemes}
-            By a general fact from the theory of group cohomology, we know that $H^0(\rmW_{\F_q}, H^2(Q_{\bar{\F}_q}, \bar{\Q}_{\ell}^{\x})) \cong H^2(Q_{\bar{\F}_q}, \bar{\Q}_{\ell}^{\x})^{\rmW_{\F_q}}$. We also know that $H^2(Q_{\bar{\F}_q}, \bar{\Q}_{\ell}^{\x})$ is trivial if and only if $Q_{\bar{\F}_q}$ is cyclic. By putting the two facts together, we deduce that $H^2(Q_{\bar{\F}_q}, \bar{\Q}_{\ell}^{\x})^{\rmW_{\F_q}}$ will be trivial if $Q_{\bar{\F_q}}$ is cyclic. 
+            By a general fact from the theory of group cohomology, we know that $H^{\circ}(\rmW_{\F_q}, H^2(Q_{\bar{\F}_q}, \bar{\Q}_{\ell}^{\x})) \cong H^2(Q_{\bar{\F}_q}, \bar{\Q}_{\ell}^{\x})^{\rmW_{\F_q}}$. We also know that $H^2(Q_{\bar{\F}_q}, \bar{\Q}_{\ell}^{\x})$ is trivial if and only if $Q_{\bar{\F}_q}$ is cyclic. By putting the two facts together, we deduce that $H^2(Q_{\bar{\F}_q}, \bar{\Q}_{\ell}^{\x})^{\rmW_{\F_q}}$ will be trivial if $Q_{\bar{\F_q}}$ is cyclic. 
         \end{corollary}
         
         \begin{remark}[The category of locally compact Hausdorff Hausdorff abelian groups] \label{remark: the_category_of_locally_compact_hausdorff_abelian_groups}
@@ -610,11 +610,11 @@
                 Because the locally compact Hausdorff abelian group $\bar{\Q}_{\ell}^{\x}$ is divisible by virtue of being the group of units of a field, the functor\footnote{Which is tautologically equal to $\Rep^1_{\bar{\Q}_{\ell}}(-)$.} $\Loc\Comp\Ab(-, \bar{\Q}_{\ell}^{\x}): \Loc\Comp\Ab^{\op} \to \Ab$ is exact \textit{a priori} (cf. remark \ref{remark: the_category_of_locally_compact_hausdorff_abelian_groups}). Through taking traces of Frobenii, we then obtain the following commutative diagram in $\Ab$, wherein the rows are short exact sequences:
                     $$
                         \begin{tikzcd}
-                        	0 & {\Char\Shv_{\bar{\Q}_{\ell}}(\pi_0(G))} & {\Char\Shv_{\bar{\Q}_{\ell}}(G)} & {\Char\Shv_{\bar{\Q}_{\ell}}(G^0)} & 0 \\
-                        	0 & {\Rep^1_{\bar{\Q}_{\ell}}(\pi_0(G)(\F_q))} & {\Rep^1_{\bar{\Q}_{\ell}}(G(\F_q))} & {\Rep^1_{\bar{\Q}_{\ell}}(G^0(\F_q))} & 0
+                        	0 & {\Char\Shv_{\bar{\Q}_{\ell}}(\pi_0(G))} & {\Char\Shv_{\bar{\Q}_{\ell}}(G)} & {\Char\Shv_{\bar{\Q}_{\ell}}(G^{\circ})} & 0 \\
+                        	0 & {\Rep^1_{\bar{\Q}_{\ell}}(\pi_0(G)(\F_q))} & {\Rep^1_{\bar{\Q}_{\ell}}(G(\F_q))} & {\Rep^1_{\bar{\Q}_{\ell}}(G^{\circ}(\F_q))} & 0
                         	\arrow[from=1-1, to=1-2]
-                        	\arrow["{\pi_{G^0}^*}", from=1-2, to=1-3]
-                        	\arrow["{\iota_{G^0}^*}", from=1-3, to=1-4]
+                        	\arrow["{\pi_{G^{\circ}}^*}", from=1-2, to=1-3]
+                        	\arrow["{\iota_{G^{\circ}}^*}", from=1-3, to=1-4]
                         	\arrow[from=1-4, to=1-5]
                         	\arrow[from=2-1, to=2-2]
                         	\arrow[from=2-2, to=2-3]
@@ -622,15 +622,15 @@
                         	\arrow[from=2-4, to=2-5]
                         	\arrow["{\trace(\Frob_{\pi_0(G)}^* \mid -)}", from=1-2, to=2-2]
                         	\arrow["{\trace(\Frob_G^* \mid -)}", from=1-3, to=2-3]
-                        	\arrow["{\trace(\Frob_{G^0}^* \mid -)}", from=1-4, to=2-4]
+                        	\arrow["{\trace(\Frob_{G^{\circ}}^* \mid -)}", from=1-4, to=2-4]
                         \end{tikzcd}
                     $$
-                Now, because $G^0$ is a connected commutative algebraic group, we can apply lemma \ref{lemma: sheaf_function_correspondence_for_connected_algebraic_groups} to see that $\trace(\Frob_{G^0}^* \mid -)$ must be an isomorphism; at the same time, $\trace(\Frob_{\pi_0(G)^* \mid -})$ is surjective due to $\pi_0(G)$ being \'etale as a commutative algebraic group over $\Spec \F_q$ (cf. lemma \ref{lemma: sheaf_function_correspondence_for_etale_commutative_group_schemes}). An application of the Snake Lemma (cf. \cite[\href{https://stacks.math.columbia.edu/tag/07JV}{Tag 07JV}]{stacks}) then yields us the following long exact sequence in $\Ab$ (the sequence with the map $\delta$), from which one clearly sees that the cokernel of $\trace(\Frob_G^* \mid -)$ is trivial and the map is therefore surjective as claimed:
+                Now, because $G^{\circ}$ is a connected commutative algebraic group, we can apply lemma \ref{lemma: sheaf_function_correspondence_for_connected_algebraic_groups} to see that $\trace(\Frob_{G^{\circ}}^* \mid -)$ must be an isomorphism; at the same time, $\trace(\Frob_{\pi_0(G)^* \mid -})$ is surjective due to $\pi_0(G)$ being \'etale as a commutative algebraic group over $\Spec \F_q$ (cf. lemma \ref{lemma: sheaf_function_correspondence_for_etale_commutative_group_schemes}). An application of the Snake Lemma (cf. \cite[\href{https://stacks.math.columbia.edu/tag/07JV}{Tag 07JV}]{stacks}) then yields us the following long exact sequence in $\Ab$ (the sequence with the map $\delta$), from which one clearly sees that the cokernel of $\trace(\Frob_G^* \mid -)$ is trivial and the map is therefore surjective as claimed:
                     $$
                         \begin{tikzcd}
                         	0 & {\ker \trace(\Frob^*_{\pi_0(G)} \mid -)} & {\ker \trace(\Frob^*_G \mid -)} & 0 \\
-                        	& {\Char\Shv_{\bar{\Q}_{\ell}}(\pi_0(G))} & {\Char\Shv_{\bar{\Q}_{\ell}}(G)} & {\Char\Shv_{\bar{\Q}_{\ell}}(G^0)} \\
-                        	& {\Rep^1_{\bar{\Q}_{\ell}}(\pi_0(G))} & {\Rep^1_{\bar{\Q}_{\ell}}(G)} & {\Rep^1_{\bar{\Q}_{\ell}}(G^0)} \\
+                        	& {\Char\Shv_{\bar{\Q}_{\ell}}(\pi_0(G))} & {\Char\Shv_{\bar{\Q}_{\ell}}(G)} & {\Char\Shv_{\bar{\Q}_{\ell}}(G^{\circ})} \\
+                        	& {\Rep^1_{\bar{\Q}_{\ell}}(\pi_0(G))} & {\Rep^1_{\bar{\Q}_{\ell}}(G)} & {\Rep^1_{\bar{\Q}_{\ell}}(G^{\circ})} \\
                         	& 0 & {\coker \trace(\Frob^*_G \mid -)} & 0 & 0
                         	\arrow["{\trace(\Frob^*_{\pi_0(G)} \mid -)}", two heads, from=2-2, to=3-2]
                         	\arrow["{\trace(\Frob^*_G \mid -)}", from=2-3, to=3-3]
