@@ -1,1 +1,67 @@
 \section{Cohomology of the Lubin-Tate Tower}
+    \subsection{Quotients of adic spaces by group actions}
+        We will begin with a discussion of quotients of adic spaces by finite groups. Ultimately, we are interested in quotients by continuous actions of locally profinite groups of analytic adic spaces satisfying certain mild finiteness hypotheses (e.g. locally Noetherian), but since profinite groups are nothing but cofiltered limits of finite groups, the latter deserves some attention. In addition, the discusion surrounding quotients by actions coming from finite groups should serve as a technical template for the later investigation of quotients by actions of locally profinite groups. 
+        
+        Suppose that $X$ is a scheme and that $\{\Spec A_i \hookrightarrow X\}_{i \in I}$ is an open covering by affine subschemes thereof. It is well-known that should there be a constant finite group scheme $G$ acting freely on $X$ (so that the $G$-orbits are contained inside the affine open subschemes $\Spec A_i$), then the quotient fppf sheaf $X/G$ will be representable by a scheme; in fact, we know more: if $X$ is affine (e.g. $X \cong \Spec A$) then $X/G \cong \Spec A^G$ as the sections of the structure sheaf $\calO_{X/G}$ are to be $G$-invariant. 
+            
+        Now, we note that for any scheme $X$ with action from any constant group scheme $G$ that is not even necessarily finite, the quotient (locally) ringed space $X/G := (|X|/G, \calO_{X/G})$ always exists, owing to the category of locally ringed spaces having all colimits. As such, one may interpret the condition whereby $X/G$ admits a $G$-invariant open covering by affine schemes to be a sufficient criterion for its representability by a scheme. As a matter of fact, this is the approach that we shall take in studying quotients of adic spaces by group actions: for a quotient $X/G$ of a sufficiently nice adic space $X$ by a constant group $G$ of a certain kind\footnote{Hypotheses on $G$ can be disregarded if $X$ is a Berkovich space.} to remain inside the category of adic spaces, we shall show that $X/G$ needs only admit a $G$-invariant covering by open affinoid subspaces. Furthermore, we wish to demonstrate that when $X$ is affinoid (e.g. $X \cong \Spa(A, A^+)$), the functions on $X/G$ are indeed $G$-invariant, i.e. $X/G \cong \Spa(A^G, (A^+)^G)$. 
+        
+        \subsubsection{\textit{Pr\'elude}: Quotients of adic spaces by actions of finite groups}
+            \begin{convention}[Locally valued ringed spaces] \label{conv: locally_valued_ringed_spaces}
+                What we know of as \textbf{v-ringed spaces} (also called \textbf{locally valued ringed spaces} or \textbf{locally continuously valued topologically ringed spaces}) are triples $X := (|X|, \calO_X, \{v_x\}_{x \in |X|})$ wherein:
+                    \begin{itemize}
+                        \item $|X|$ is a topological space,
+                        \item $\calO_X$ is a sheaf of commutative topological rings (which we might as well assume to be complete) on the category of open subsets of $X$, such that at every point $x \in |X|$, the corresponding stalk $\calO_{X, x}$ is a local ring, and
+                        \item $\{v_x\}_{x \in |X|}$ is a set of equivalence classes of continuous valuations on the stalks $\calO_{X, x}$.
+                    \end{itemize}
+                Such spaces form an evidently complete and cocomplete category, which we shall denote simply by $\LVRS$.
+            \end{convention}
+            \begin{remark}
+                \textit{A priori}, the category of v-ringed spaces admits that adic spaces - which are v-ringed spaces admitting covers by affinoid open subspaces and equipped with specifically defined structure sheaves (cf. \cite[Definition 3.1.6]{scholze_weinstein_2020_berkeley_lectures_on_p_adic_geometry}) - as a full subcategory. Since the former is cocomplete, quotients of adic spaces shall firstly be considered as coequalisers in the category of v-ringed spaces. We shall then seek criteria for these coequalisers to be adic spaces. 
+            \end{remark}
+            \begin{remark}[Constant finite groups as adic spaces]
+                By Yoneda's Lemma and by the definition of adic spaces as v-ringed spaces admitting open covers by affinoid open subspaces, every adic space $X$ can be viewed as a representable presheaf $h_X$ on the category of affinoid adic spaces given by $S \mapsto X(S)$, which in fact satisfies rational descent. In addition, recall that the category of adic spaces admits terminal objects, which are \textit{a priori} isomorphic to $\Spa(\Z, \Z)$. What one can then show is that the coproduct $\coprod_{g \in G} h_{\Spa(\Z, \Z)}$ of rational sheaves on the category of affinoid adic spaces.
+            \end{remark}
+            \begin{convention}
+                If $\Gamma$ is the value group of some given valuation, then $\bar{\Gamma}$ shall mean $\Gamma \cup \{\infty\}$.
+            \end{convention}
+            \begin{lemma}[Free actions of finite groups induce equivalence relations on adic spaces] \label{lemma: free_actions_of_finite_groups_induce_equivalence_relations_on_adic_spaces}
+                Let $X := (|X|, \calO_X, \{v_x\}_{x \in |X|})$ be an adic space and $\alpha: G \x X \to X$ be a free action of an a finite group $G$. Then, consider the v-ringed space $X/G := (|X|/G, \calO_{X/G}, \{v_{[x]}\}_{[x] \in X/G})$, wherein:
+                    \begin{itemize}
+                        \item $|X|/G$ is the quotient of the topological space $|X|$ by $G$ whose quotient topology comes from the canonical surjective map $|q_G|: |X| \to |X|/G$, 
+                        \item the structure (pre)sheaf is given by $\calO_{X/G} := (q_G)_*\calO_X^G$, and
+                        \item for every $[x] \in |X|/G$, the corresponding continuous valuation $v_{[x]}$ is given by the composition $\calO_{X/G, [x]} \hookrightarrow \calO_{X, x} \xrightarrow[]{v_x} \bar{\Gamma}_{v_x}$ (and note that $\calO_{X/G, [x]} \cong \calO_{X, x}^G$).
+                    \end{itemize}
+                The $v$-ringed space $X/G$ as defined above defines the following equivalence relation internal to $\Sh(X_{\an})$:
+                    $$
+                        \begin{tikzcd}
+                        	{G \x X} & X
+                        	\arrow["{\pr_2}"', shift right=2, from=1-1, to=1-2]
+                        	\arrow["\alpha", shift left=2, from=1-1, to=1-2]
+                        \end{tikzcd}
+                    $$
+            \end{lemma}
+                \begin{proof}
+                    From lemma \ref{lemma: quotients_by_group_actions_are_open}, we know that quotients of topological spaces by group actions are open maps, so the canonical quotient map of topological spaces $|q_G|: |X| \to |X|/G$ is open \textit{a priori}. Now, let $\{\Spa(A_i, A_i^+) \hookrightarrow X\}_{i \in I}$ be an open covering of $X$ by affinoid open subspaces. The quotient map $|q_G|: |X| \to |X|/G$ being open then implies that $|X|/G$ admits the $G$-invariant open covering $\{|\Spa(A_i^G, (A_i^+)^G)| \hookrightarrow |X|/G\}_{i \in I}$. That $X/G := (|X|/G, \calO_{X/G}, \{v_{[x]}\}_{[x] \in X/G})$ is a well-defined v-ringed space as described in the statement of the lemma then follows immediately. 
+                \end{proof}
+            \begin{corollary}[Quotients of adic spaces by free actions of finite groups are coequalisers] \label{coro: quotients_of_adic_spaces_by_free_actions_of_finite_groups_are_coequalisers}
+                Let $X := (|X|, \calO_X, \{v_x\}_{x \in |X|})$ be an adic space and $\alpha: G \x X \to X$ be a free action of an a finite group $G$. Then the quotient space $X/G$ exists as the coequaliser of the following diagram in $\LVRS$:
+                    $$
+                        \begin{tikzcd}
+                        	{G \x X} & X
+                        	\arrow["{\pr_2}"', shift right=2, from=1-1, to=1-2]
+                        	\arrow["\alpha", shift left=2, from=1-1, to=1-2]
+                        \end{tikzcd}
+                    $$
+            \end{corollary}
+    
+        \subsubsection{Quotients of adic spaces by actions of locally profinite groups}
+    
+    \subsection{The \texorpdfstring{$p$}{}-adic Local Langlands Correspondence via the Lubin-Tate Tower}
+        \subsubsection{Finiteness of \texorpdfstring{$p$}{}-adic cohomology of the Lubin-Tate Tower}
+        
+        \subsubsection{Geometrisation of admissible representations}
+        
+    \subsection{Local-global compatibility}
+    
+    \subsection{Patching and principal series representations of \texorpdfstring{$\GL_2(\Q_p)$}{}}

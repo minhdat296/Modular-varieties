@@ -46,7 +46,7 @@
         \subsubsection{Universal vector extensions of \texorpdfstring{$p$}{}-divisible groups}
         
         \subsubsection{Dieudonn\'e modules and the classification of \texorpdfstring{$p$}{}-divisible groups}
-            We begin our exposition of Dieudonn\'e theory with a discussion of an auxiliary notion, namely that of $p$-bases.
+            We begin our exposition of Dieudonn\'e theory with a discussion of an auxiliary notion, namely that of $p$-bases. Ultimately, we shall want to be making use of a somewhat non-trivial fact, that so-called $p$-free algebras (i.e. algebras admitting the aforementioned $p$-bases) are formally smooth when they are of characteristic $p$, as well as to understand how formal smoothness interacts with $p$-freeness.
             \begin{definition}[$p$-bases] \label{def: p_bases}
                 Fix a ring map $\varphi: R \to S$. A \textbf{$p$-basis} (for some prime\footnote{Typically, one takes $R$ to be a ring of some prime characteristic and $p := \chara R$.} $p$) for $S$ over $R$ relative to $\varphi$ is a subset $\{x_i\}_{i \in I}$ (which is said to be \textbf{$p$-independent} over $R$ relative to $\varphi$) such that its image $\{dx_i\}_{i \in I}$ under the universal derivation $d: S \to \Omega^1_{S/R}$ is a set of generators for the $S$-modules $\Omega^1_{S/R}$. If a $p$-basis for $S$ over $R$ relative to $\varphi$ exists, then we shall say that $S$ is \textbf{$p$-free} over $R$.
             \end{definition}
@@ -59,7 +59,7 @@
                 \begin{proof}
                     
                 \end{proof}
-            \begin{corollary}
+            \begin{corollary}[Field extensions of characteristic $p$ are $p$-free] \label{coro: field_extensions_of_characteristic_p_are_p_free}
                 For any prime $p$, any extension of characteristic-$p$ fields is $p$-free.
             \end{corollary}
             \begin{proposition}[$p$-free algebras are reduced and formally smooth] \label{prop: p_free_algebras_are_reduced_and_formally_smooth}
@@ -118,8 +118,12 @@
                 Let $R$ be a perfect $\F_p$-algebra and let $\varphi: R \to S$ be a quasi-smooth\footnote{E.g. $S$ is $p$-free over $R$ relative to $\varphi$.} morphism of $\F_p$-algebras, for some prime $p$. If, in addition, $\Omega^1_{S/R}$ is projective as an $S$-module, then a formal $p$-adic lifting of $S$ to characteristic $0$ exists. 
             \end{proposition}
                 \begin{proof}
-                    Per remark \ref{remark: truncated_formal_p_adic_liftings}, it shall suffice to show that for all $n \geq 1$, a modulo-$\p^n$ lifting $\varphi_n: S_n \to \Witt_n(R)$ exists, where $\p \subset \Witt(R)$ is the unique maximal ideal.
+                    
                 \end{proof}
             
+            Now, as we have mentioned at the beginning that we would like to demonstrate that $p$-free $\F_p$-algebras (in fact, $p$-free algebras over some perfect $\F_p$-algebra $R$), let us now discuss how the notion of formall smoothness interacts with that of $p$-freeness.
+            \begin{convention}
+                Let $k/\F_p$ be a perfect extension and let $A$ be a formally smooth Noetherian $k$-algebra that is adically complete with respect to some (finitely generated) ideal $I \subset A$. Suppose furthermore that there exists a finite extension $k'/k$ (hence finite-\'etale and therefore admitting a \textit{finite} $p$-basis over $k'$; cf. corollary \ref{coro: field_extensions_of_characteristic_p_are_p_free}) such that there exists an injective $k$-algebra homomorphism $\varphi': k' \to A/I$ and that $A/I$ admits a finite $p$-basis over $k'$ relative to $\varphi'$.
+            \end{convention}
     
     \subsection{Moduli spaces of \texorpdfstring{$p$}{}-divisible groups}
