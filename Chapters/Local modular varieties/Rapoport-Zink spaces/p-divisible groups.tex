@@ -2,11 +2,18 @@
     \subsection{\texorpdfstring{$p$}{}-divisible groups}
         \subsubsection{Universal covers of \texorpdfstring{$p$}{}-divisible groups}
             \begin{definition}[$p$-divisible groups] \label{def: p_divisible_groups}
-                Fix a prime $p$. A \textbf{$p$-divisible group} (also called a \textbf{Barsotti-Tate group}) of \textbf{height} $h \geq 0$ associated to a finite flat group scheme $G$ over a scheme $S$, such that $|G[p^n](T)| = p^{nh}$ for all $n \in \N$ and all $S$-schemes $T$, is the $\N$-filtered colimit:
+                Fix a prime $p$. A \textbf{$p$-divisible group} (also called a \textbf{Barsotti-Tate group}) of \textbf{height} $h \geq 0$ associated to a finite flat \textit{commutative} group scheme $G$ over a scheme $S$, such that $|G[p^n](T)| = p^{nh}$ for all $n \in \N$ and all $S$-schemes $T$, is the $\N$-filtered colimit:
                     $$G[p^{\infty}] := \underset{n \in \N}{\colim} G[p^n]$$
             \end{definition}
+            \begin{remark}
+                Equivalently, one might think of the category of $p$-divisible groups (respectively, $p$-divisible groups of a fixed height $h \geq 0$) over a base scheme $S$ as the ind-completion of the category wherein:
+                    \begin{itemize}
+                        \item the objects are commutative $p$-group $S$-schemes, i.e. group $S$-schemes $G$ such that $|G(T)| = p^N$ for some $N \in \N$ (respectively, for some $N = nh$) for all $S$-schemes $T$, and
+                        \item the morphisms are closed immersion.
+                    \end{itemize}
+            \end{remark}
             \begin{example}
-                Let $p$ be a prime. The colimit $\mu_{p^{\infty}}$ of the tower $1 \leq \mu_p \leq \mu_{p^2} \leq ...$ of groups of $p^{th}$ power roots of unity, wherein the transition morphisms are the canonical embeddings,is a $p$-divisible group of height $1$. 
+                Let $p$ be a prime. The colimit $\mu_{p^{\infty}}$ of the tower $1 \leq \mu_p \leq \mu_{p^2} \leq ...$ of groups of $p^{th}$ power roots of unity, wherein the transition morphisms are the canonical embeddings, is a $p$-divisible group of height $1$. 
             \end{example}
             \begin{example}
                 Fix any $h \in \N$ along with a prime $p$, and consider the following $\N$-filtered diagram of constant group schemes, wherein the transition morphisms are multiplication-by-$p$ maps:
@@ -21,10 +28,10 @@
                 The colimit of this diagram is a $p$-divisible group of height $h$.
             \end{example}
             \begin{remark}
-                $p$-divisible groups $\frakG := G[p^{\infty}]$ over a base scheme $S$ (for some finite flat group $S$-scheme $G$) are group objects of the sheaf topos $\Sh(S_{\fppf}^{p\-\nilp})$ of $S$-schemes on which $p$ is nilpotent. Aside from minor set-theoretic issues, this is a rather trivial statement, since each of the $p^n$-torsion $S$-subgroup $G[p^n] \leq G$ is \textit{a priori} a group object of $\Sh(S_{\fppf})$, and hence of $\Sh(S_{\fppf}^{p\-\nilp})$, and since sheaf topoi are cocomplete\footnote{This is where size becomes an issue, since large topoi might not admit a sheafification functor from the presheaf topos over the underlying (large) site. We ignore these problems because we are not logicians. In practice, one restricts one's attention to $p$-divisible groups constructed from affine finite flat group schemes over affine base schemes.}. Note that for all $T \in \Ob((\Sch_{/S})_{\fppf})$ and all $T' \in \Ob((\Sch_{/S}^{p\-\nilp})_{\fppf})$, and for all $n \in \N$, one indeed has $G[p^n](T) \cong G[p^n](T')$, since having $p^n$-torsion implies $p$ being nilpotent.
+                $p$-divisible groups $\frakG := G[p^{\infty}]$ over a base scheme $S$ (for some finite flat commutative group $S$-scheme $G$) are group objects of the sheaf topos $\Sh(S_{\fppf}^{p\-\nilp})$ of $S$-schemes on which $p$ is nilpotent. Aside from minor set-theoretic issues, this is a rather trivial statement, since each of the $p^n$-torsion $S$-subgroup $G[p^n] \leq G$ is \textit{a priori} a group object of $\Sh(S_{\fppf})$, and hence of $\Sh(S_{\fppf}^{p\-\nilp})$, and since sheaf topoi are cocomplete\footnote{This is where size becomes an issue, since large topoi might not admit a sheafification functor from the presheaf topos over the underlying (large) site. We ignore these problems because we are not logicians. In practice, one restricts one's attention to $p$-divisible groups constructed from affine finite flat group schemes over affine base schemes.}. Note that for all $T \in \Ob((\Sch_{/S})_{\fppf})$ and all $T' \in \Ob((\Sch_{/S}^{p\-\nilp})_{\fppf})$, and for all $n \in \N$, one indeed has $G[p^n](T) \cong G[p^n](T')$, since having $p^n$-torsion implies $p$ being nilpotent.
             \end{remark}
-            \begin{lemma}[Extensions of \'etale finite flat groups by connected finite flat groups] \label{lemma: extensions_of_etale_finite_flat_groups_by_connected_finite_flat_groups}
-                Let $K/\Q_p$ be a non-archimedean extension and consider a short exact sequence of flat group $K^{\circ}$-schemes as follows, wherein $H$ is finite over $\Spec K^{\circ}$ and connected, $Q$ is finite-\'etale over $\Spec K^{\circ}$, and $G$ is unique up to $K$-isogenies (i.e. $G_K$ is unique only up to isomorphisms of group $K$-schemes):
+            \begin{lemma}[Extensions of \'etale finite flat commutative groups by connected finite flat groups] \label{lemma: extensions_of_etale_finite_flat_commutative_groups_by_connected_finite_flat_groups}
+                Let $K/\Q_p$ be a non-archimedean extension and consider a short exact sequence of flat commutative group $K^{\circ}$-schemes as follows, wherein $H$ is finite over $\Spec K^{\circ}$ and connected, $Q$ is finite-\'etale over $\Spec K^{\circ}$, and $G$ is unique up to $K$-isogenies\footnote{I.e. $G_K$ is unique only up to isomorphisms of group $K$-schemes (cf. definition \ref{def: quasi_isogenies}).}:
                     $$
                         \begin{tikzcd}
                         	1 & H & G & Q & 1
@@ -40,7 +47,7 @@
                         
                 \end{proof}
             \begin{corollary}[Extensions of \'etale $p$-divisible groups by connected $p$-divisible groups] \label{coro: extensions_of_etale_p_divisible_groups_by_connected_p_divisible_groups}
-                Let $K/\Q_p$ be a non-archimedean extension, let $H$ be a connected $p$-divisible $K^{\circ}$-group, and let $Q$ be an \'etale $p$-divisible $K^{\circ}$-group. Then, the extension of $Q$ by $H$ (up to $K$-isogenies), as group objects of $\Sh((\Spec K^{\circ})_{\fppf}^{p\-\nilp})$, will be a formal $K^{\circ}$-scheme that is locally topologically of finite presentation. In particular, when $G$ is affine, one has an isomorphism of affine formal $K^{\circ}$-schemes $G[p^{\infty}]^{\wedge} \cong \Spf K^{\circ}[\![x_1, ..., x_N]\!]^{\wedge}$, with $(-)^{\wedge}$ denoting $p$-adic completion; of course, if $K/\Q_p$ is a complete non-archimedean extension, it is simply the case that $G[p^{\infty}] \cong \Spf K^{\circ}[\![x_1, ..., x_N]\!]$.
+                Let $K/\Q_p$ be a non-archimedean extension, let $H$ be a connected $p$-divisible $K^{\circ}$-group, and let $Q$ be an \'etale $p$-divisible $K^{\circ}$-group. Then, the extension of $Q$ by $H$ (up to $K$-isogenies), as commutative group objects of $\Sh((\Spec K^{\circ})_{\fppf}^{p\-\nilp})$, will be a formal $K^{\circ}$-scheme that is locally topologically of finite presentation. In particular, when $G$ is affine, one has an isomorphism of affine formal $K^{\circ}$-schemes $G[p^{\infty}]^{\wedge} \cong \Spf K^{\circ}[\![x_1, ..., x_N]\!]^{\wedge}$, with $(-)^{\wedge}$ denoting $p$-adic completion; of course, if $K/\Q_p$ is a complete non-archimedean extension, it is simply the case that $G[p^{\infty}] \cong \Spf K^{\circ}[\![x_1, ..., x_N]\!]$.
             \end{corollary}
                 
         \subsubsection{Universal vector extensions of \texorpdfstring{$p$}{}-divisible groups}
@@ -127,3 +134,51 @@
             \end{convention}
     
     \subsection{Moduli spaces of \texorpdfstring{$p$}{}-divisible groups}
+        \subsubsection{Deformations of \texorpdfstring{$p$}{}-divisible groups and Gross-Hopkins Period Morphisms}
+            \begin{definition}[(Quasi)-isogenies] \label{def: quasi_isogenies}
+                Let $R$ be a commutative ring and $K$ be a commutative $R$-algebra. At the same time, let $\calA_R$ be an $R$-linear category and consider the category $\calA_K := \calA \tensor_R K$ as the localisation of $\calA_R$ at its class of $K$-linear morphisms: this category is known as the \textbf{$K$-isogeny category} of $\calA_R$, and the \textbf{$K$-isogenies} in $\calA_R$ are precisely those morphisms $\varphi \in \Mor(\calA_R)$ such that $\varphi \tensor_R K \in \Mor(\calA_K)$ is invertible. One can also form the so-called \textbf{quasi-$K$-isogeny category} of $\calA_R$ by localising $\calA_R$ at its class of $K$-isogenies.
+            \end{definition}
+            \begin{example}[(Quasi-)isogenies between abelian varieties] \label{example: quasi_isogenies_between_abelian_varieties}
+                The category of abelian varieties over some fixed base field $k$ is $\Z$-linear, so $\Q$-isogenies between abelian $k$-varieties $A, B$ are nothing but morphisms:
+                    $$\varphi: A \to B$$
+                (which induce $\Z$-module homomorphisms $\varphi_S: A(S) \to B(S)$ for all $k$-schemes $S$) such that for all $k$-schemes $S$, the corresponding $\Q$-linear map of points:
+                    $$\varphi_S \tensor_{\Z} \Q: A(S) \tensor_{\Z} \Q \to B(S) \tensor_{\Z} \Q$$
+                is an isomorphism of $\Q$-vector spaces. Interestingly, isogenies from one abelian $k$-variety to another are precisely those surjective group $k$-scheme homomorphisms with finite kernels over $\Spec k$.
+                
+                Since one obtains - by definition - the class of quasi-isogenies by formally inverting isogenies, quasi-$\Q$-isogenies between abelian $k$-varieties might be thought of as spans:
+                    $$
+                        \begin{tikzcd}
+                        	& C \\
+                        	A && B
+                        	\arrow["\alpha"', from=1-2, to=2-1]
+                        	\arrow["\beta", from=1-2, to=2-3]
+                        \end{tikzcd}
+                    $$
+                (or rather, the corresponding formal right-fraction $\beta \circ \alpha^{-1}: A \to B$). Now, using the fact that isogenies between abelian $k$-varieties are surjective group $k$-scheme homomorphisms with finite kernels, one sees that given any quasi-$\Q$-isogeny $\alpha, \beta: C \toto A, B$ as above, there exists an $\Q$-isogeny $\gamma: A \to C$ and some $n > 0$ such that:
+                    $$\alpha \circ \gamma = n_A$$
+                where $n_A: A \to A$ is the multiplication-by-$n$ map on $A$. 
+            \end{example}
+            
+            \begin{example}[(Quasi-)isogenies between $p$-divisible groups] \label{example: quasi_isogenies_between_p_divisible_groups}
+                The category of $p$-divisible groups over any base scheme $S$ is clearly $\Z$-linear\footnote{In fact, it is abelian by virtue of being the ind-completion of an abelian category, namely that of finite flat commutative group $S$-schemes and closed immersions between them.} and thus admit notions of isogenies and quasi-isogenies as in definition \ref{def: quasi_isogenies}. 
+            \end{example}
+            \begin{convention}
+                We now fix a perfect field $k$ of some prime characteristic $p > 0$. 
+            \end{convention}
+            \begin{definition}[Quasi-isogenous deformations of $p$-divisible groups] \label{def: quasi_isogenous_deformations_of_p_divisible_groups}
+                Let $\frakH_k$ be a $p$-divisible group over $\Spec k$ that is of height $h \geq 0$ and dimension $d \geq 0$. The \textbf{quasi-isogenous deformation functor} over $\Witt(k)$ associated to $\frakH_k$ is then the presheaf:
+                    $$\Def_{\frakH_k}^{\qisg}: (\Sch_{/\Spec \Witt(k)}^{\aff, p\-\nilp})_{\fppf}^{\op} \to \Sets$$
+                    $$
+                        R \mapsto
+                        \left\{
+                            (\frakG_R, \rho) \: \bigg| \:
+                            \begin{matrix}
+                                \text{$\frakG_R$ is a $p$-divisible group over $\Spec R$, and}
+                                \\
+                                \text{$\rho: \frakH_{R/p} \to \frakG_{R/p}$ is a quasi-isogeny}
+                            \end{matrix}
+                        \right\}
+                    $$
+            \end{definition}
+        
+        \subsubsection{Lubin-Tate Towers}

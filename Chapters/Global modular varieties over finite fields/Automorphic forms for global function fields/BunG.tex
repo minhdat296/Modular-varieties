@@ -1,0 +1,48 @@
+\section{\textit{Pr\'elude}: moduli stacks of \texorpdfstring{$G$}{}-bundles on curves}
+    In this section, we study - for $G$ a (reductive) algebraic group over an algebraically closed ground field $k$ - geometric properties of the moduli stack $\Bun_G(X)$ of principal $G$-bundles on a smooth, projective, and connected algebraic curve $X$ over $\Spec k$. In particular, we wish to establish that $\Bun_G(X)$ is an algebraic stack, that it is locally of finite presentation, and smooth whenever $G$ is smooth over $\Spec k$ (e.g. $G$ is linear algebraic group over $k$). Furthermore, we will see that $\Bun_G(X)$ admits level structures and as such can serve as an underlying \say{automorphic space} (in the sense of being global function field analogues of Shimura varieties over global number fields)\footnote{Over $\F_q$, the analogy is much more precise, as one has access to Weil's Uniformisation Theorem, which tells us that $|\Bun_G(X)| \cong G(K_X)\backslash G(\A_X)/G(\bbO_{X})$, where $K_X$ is the global function field of $X$ with ring of integers $\bbO_X$, and $\A_X$ is the associated ring of ad\`eles.}. 
+    
+    \subsection{Quotient stacks and mapping stacks}
+        \subsubsection{Quotients by algebraic groups}
+            \begin{definition}[Pre-torsors] \label{def: pre_torsors}
+                Let $\C$ be a category with enough pullbacks, let $\pi: Z \to S$ be a morphism, and suppose that $G$ is a group object of $\C_{/S}$ acting on $\pi: Z \to S$ via $\alpha: G \x_{S, \pi} Z \to Z$. One says that $\pi: Z \to S$ is a \textbf{$G$-pre-torsor} (or often, that $Z$ is a \textbf{$G$-pre-torsor over $S$} with respect to $\pi$) if and only if $\Aut_S(Z) \cong G$. Equivalently, this is saying that for all $T \in \Ob(\C_{/S})$, one has bijections:
+                    $$\alpha_T \x \id_{Z(T)}: G(T) \x_{S(T), \pi_T} Z(T) \to Z(T) \x_{\pi_T, S(T), \pi_T} Z(T)$$
+                    $$(g, z) \mapsto (\alpha_T(g, z), z)$$
+                for all $g \in G(T)$ and all $z \in Z(T)$. 
+            \end{definition}
+            \begin{definition}[Torsors] \label{def: torsors}
+                Let $(\C, J)$ be a site with enough pullbacks, let $\pi: Z \to S$ be a pre-torsor with respect to some action $\alpha: G \x_S Z \to Z$ from a group object $G$ of $\C_{/S}$. 
+            \end{definition}
+        
+            \begin{definition}[Quotient stacks] \label{def: quotient_stacks}
+                For $S$ an arbitrary base scheme and $(U, R, s, t)$ a groupoid internal to the cartesian-closed category of $S$-schemes, the associated \textbf{quotient stack} (denotes by $[U/R]$) is the fppf $2$-sheafification of the $S$-prestack:
+                    $$(\Sch_{/S})_{\fppf}^{\op} \to 1\-\Grpd_2$$
+                    $$T \mapsto (U(T), R(T), s_T, t_T)$$
+            \end{definition}
+            \begin{example}[Quotient stacks associated to group scheme actions] \label{example: quotient_stacks_associated_to_group_scheme_actions}
+                Let $S$ be an arbitrary base scheme, let $Z$ be an $S$-scheme, and let $G$ be a group $S$-scheme acting on $Z$ via $\alpha: G \x_S Z \to Z$. Such an action defines an equivalence relation\footnote{Which is an instance of an internal groupoid.} $(G \x_S Z, Z, \alpha, \pr_2)$ internal to $\Sch_{/S}$, so there is an associated quotient stack (commonly denoted by $[Z/_{\alpha}G]$ or simply $[Z/G]$ when $\alpha$ is understood from the surrounding context), which by definition is the fppf $2$-sheafification of the $S$-prestack:
+                    $$(\Sch_{/S})_{\fppf}^{\op} \to 1\-\Grpd_2$$
+                    $$T \mapsto \left(G(T) \x_{S(T)} Z(T), Z(T), \alpha_T, (\pr_2)_T\right)$$
+            \end{example}
+            \begin{proposition}[Quotients of schemes by algebraic groups are algebraic stacks] \label{prop: quotients_of_schemes_by_algebraic_groups_are_algebraic_stacks}
+                Let $Z$ be a scheme over some field $k$, let $G$ be an algebraic group over $\Spec k$ that acts on $Z$ via $\alpha: G \x_{\Spec k} Z \to Z$. 
+                    \begin{enumerate}
+                        \item The quotient stack $[Z/G]$ shall be an algebraic stack whose diagonal $\Delta_{[Z/G]/S}: [Z/G] \to [Z/G] \x_S [Z/G]$ is separated. 
+                        \item If $Z$ is quasi-separated (respectively, separated) over $S$, then $\Delta_{[Z/G]/S}$ will be quasi-compact (respectively, affine).
+                    \end{enumerate}
+            \end{proposition}
+                \begin{proof}
+                    \noindent
+                    \begin{enumerate}
+                        \item 
+                        \item 
+                    \end{enumerate}
+                \end{proof}
+        
+        \subsubsection{Mapping stacks}
+    
+    \subsection{The geometry of \texorpdfstring{$\Bun_G$}{}}
+        \subsubsection{An atlas for \texorpdfstring{$\Bun_G$}{}}
+        
+        \subsubsection{Level structures}
+        
+        \subsubsection{\texorpdfstring{$\Bun_G$}{} is smooth when \texorpdfstring{$G$}{} is smooth}
