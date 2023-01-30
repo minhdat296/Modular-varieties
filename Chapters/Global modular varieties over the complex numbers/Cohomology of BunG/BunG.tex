@@ -1,0 +1,148 @@
+\section{\textit{Pr\'elude}: moduli stacks of \texorpdfstring{$G$}{}-bundles on curves}
+    In this section, we study - for $G$ a (reductive) algebraic group over an algebraically closed ground field $k$ - geometric properties of the moduli stack $\Bun_G(X)$ of principal $G$-bundles on a smooth, projective, and connected algebraic curve $X$ over $\Spec k$. In particular, we wish to establish that $\Bun_G(X)$ is an algebraic stack, that it is locally of finite presentation, and smooth whenever $G$ is smooth over $\Spec k$ (e.g. $G$ is linear algebraic group over $k$). Furthermore, we will see that $\Bun_G(X)$ admits level structures and as such can serve as an underlying \say{automorphic space} (in the sense of being global function field analogues of Shimura varieties over global number fields)\footnote{Over $\F_q$, the analogy is much more precise, as one has access to Weil's Uniformisation Theorem, which tells us that $|\Bun_G(X)| \cong G(K_X)\backslash G(\A_X)/G(\bbO_{X})$, where $K_X$ is the global function field of $X$ with ring of integers $\bbO_X$, and $\A_X$ is the associated ring of ad\`eles.}. 
+    
+    \subsection{Quotient stacks and mapping stacks}
+        \subsubsection{Torsors and quotient stacks}
+            \begin{definition}[Pre-torsors] \label{def: pre_torsors}
+                Let $\C$ be a category with enough pullbacks, let $\pi: Z \to S$ be a morphism, and suppose that $G$ is a group object of $\C_{/S}$ acting on $\pi: Z \to S$ via $\alpha: G \x_{S, \pi} Z \to Z$. One says that $\pi: Z \to S$ is a \textbf{$G$-pre-torsor} (or often, that $Z$ is a \textbf{$G$-pre-torsor over $S$} with respect to $\pi$) if and only if $\Aut_S(Z) \cong G$. Equivalently, this is saying that for all $T \in \Ob(\C_{/S})$, one has bijections:
+                    $$\alpha_T \x \id_{Z(T)}: G(T) \x_{S(T), \pi_T} Z(T) \to Z(T) \x_{\pi_T, S(T), \pi_T} Z(T)$$
+                    $$(g, z) \mapsto (\alpha_T(g, z), z)$$
+                for all $g \in G(T)$ and all $z \in Z(T)$. 
+            \end{definition}
+            \begin{remark}[Base-changing pre-torsors] \label{remark: base_changing_pre_torsors}
+                Let $\C$ be a category with enough pullbacks, let $\pi: Z \to S$ be a morphism, and suppose that $G$ is a group object of $\C_{/S}$ acting on $\pi: Z \to S$ via $\alpha: G \x_{S, \pi} Z \to Z$ such that $\pi: Z \to S$ is a $G$-pre-torsor in the sense of definition \ref{def: pre_torsors}. Then it is easy to show that for all $S' \in \Ob(\C_{/S})$, the corresponding base-change $\pi': Z' \to S'$ (with $Z' := Z \x_S S'$) will be a $G'$-pre-torsor, where $G' := G \x_S S'$.
+                
+                In fact, the category of $G$-pre-torsors over a given base object $S \in \Ob(\C)$ is equivalent to the category whose objects are \textit{free and transitive} $G$-actions:
+                    $$\alpha: G \x_S Z \to Z$$
+                and whose morphisms are commutative diagrams:
+                    $$
+                        \begin{tikzcd}
+                        	{G \x_S Z'} & {G \x_S Z} \\
+                        	{Z'} & Z
+                        	\arrow["f", from=2-1, to=2-2]
+                        	\arrow["\alpha", from=1-2, to=2-2]
+                        	\arrow["{\alpha'}"', from=1-1, to=2-1]
+                        	\arrow["{\id_{G/S} \x f}", from=1-1, to=1-2]
+                        \end{tikzcd}
+                    $$
+            \end{remark}
+            \begin{definition}[Torsors] \label{def: torsors}
+                Let $(\C, \tau)$ be a site with enough pullbacks, let $\pi: Z \to S$ be a pre-torsor with respect to some action $\alpha: G \x_S Z \to Z$ from a group object $G$ of $\C_{/S}$. For such a pre-torsor to be a \textbf{torsor} (or more specifically, a \textbf{$\tau$-torsor}) means that for all $\tau$-coverings $\{f_i: S_i \to S\}_{i \in I}$, the $G_i$-pre-torsors $\pi_i: Z_i \to S_i$ (with $G_i := G \x_S S_i$ and $Z_i := Z \x_S S_i$) are \textbf{trivial}, i.e. for all $i \in I$ and all $T \in \Ob(\C_{/S_i})$, and for all $g \in G_i(T)$ and all $z \in Z_i(T)$, one has $\alpha_i(g, z) = \id_{Z_i(T)}$.
+            \end{definition}
+            \begin{remark}[Base-changing torsors] \label{remark: base_changing_torsors}
+                Let $(\C, \tau)$ be a site with enough pullbacks, let $\pi: Z \to S$ be a pre-torsor with respect to some action $\alpha: G \x_S Z \to Z$ from a group object $G$ of $\C_{/S}$. Then equivalently, one can say that $\pi: Z \to S$ $\tau$-torsor with respect to the given $G$-action if and only if for all $\tau$-coverings $\{f_i: S_i \to S\}_{i \in I}$, one has pullback squares of the following form:
+                    $$
+                        \begin{tikzcd}
+                        	{G_i \x_{S_i} Z_i} & {G \x_S Z} \\
+                        	{Z_i} & Z
+                        	\arrow["\alpha", from=1-2, to=2-2]
+                        	\arrow["{\pi \x f_i}", from=2-1, to=2-2]
+                        	\arrow["{\pr_2}"', from=1-1, to=2-1]
+                        	\arrow[from=1-1, to=1-2]
+                        	\arrow["\lrcorner"{anchor=center, pos=0.125}, draw=none, from=1-1, to=2-2]
+                        \end{tikzcd}
+                    $$
+                (again, with $Z_i := Z \x_S S_i$ and $G_i := G \x_S S_i$ for all $i \in I$). From this and the fact that base-changes of pre-torsors are pre-torsors (cf. remark \ref{remark: base_changing_pre_torsors}), one sees that base-changes of $\tau$-torsors are also $\tau$-torsors: specifically, this means that for all $S' \in \Ob(\C_{/S})$, the corresponding base-change $\pi': Z' \to S'$ (with $Z' := Z \x_S S'$) will be a $\tau$-torsor with respect to the $G'$-action $\alpha': G' \x_{S'} Z' \to Z'$ (with $G' := G \x_S S'$) borne out of the following pullback:
+                    $$
+                        \begin{tikzcd}
+                        	{G' \x_{S'} Z'} & {G \x_S Z} \\
+                        	{Z'} & Z
+                        	\arrow["\alpha", from=1-2, to=2-2]
+                        	\arrow[from=1-1, to=1-2]
+                        	\arrow["\lrcorner"{anchor=center, pos=0.125}, draw=none, from=1-1, to=2-2]
+                        	\arrow[from=2-1, to=2-2]
+                        	\arrow["{\alpha'}"', from=1-1, to=2-1]
+                        \end{tikzcd}
+                    $$
+            \end{remark}
+            \begin{convention}[What about principal bundles ?]
+                What we refer to as \say{torsors} have historically been also called names such as \say{principal bundles}, \say{equivariant bundles}, or \say{homogeneous spaces}. Within the context of algebraic geometry specifically, when $\C$ is the category of schemes and the topology $\tau$ is either the Zariski or fpqc topology, then it is common to refer to torsors as \say{principal bundles}, as then the coverings that the topology in question is comprised of are literally open subsets of the base space. In order to avoid confusion (and also for the sake of brevity), we shall defer only to the terminologies of \say{pre-torsors} and \say{torsors} as defined in definitions \ref{def: pre_torsors} and \ref{def: torsors}.
+            \end{convention}
+            
+            Though it is entirely possible to define quotient stacks in an abstract-nonsensical manner (cf. remark \ref{remark: quotient_stacks_over_general_sites}), and it is certainly easier to establish formal properties of quotient stacks when we view them as purely categorical constructions (cf. lemmas \ref{lemma: universal_property_of_quotient_stacks}, \ref{lemma: functoriality_of_quotient_stacks}, \ref{lemma: base_changing_quotient_stacks}), let us state the definition of this construction only within the context of taking quotients of equivalence relations on schemes. Ultimately, this is the only case that we care about (as we shall be taking quotients of curves by actions of algebraic groups), so there is no loss of generality in us stating such a specific definition.
+            \begin{definition}[Quotient stacks] \label{def: quotient_stacks}
+                For $S$ an arbitrary base scheme and $(U, R, s, t)$ a groupoid internal to the cartesian-closed category $\Sch_{/S}$ of $S$-schemes, the associated \textbf{quotient stack} (denotes by $[U/R]$) is the fppf $2$-sheafification of the $S$-prestack:
+                    $$(\Sch_{/S})_{\fppf}^{\op} \to 1\-\Grpd_2$$
+                    $$T \mapsto (U(T), R(T), s_T, t_T)$$
+            \end{definition}
+            \begin{example}[Quotient stacks associated to group scheme actions] \label{example: quotient_stacks_associated_to_group_scheme_actions}
+                Let $S$ be an arbitrary base scheme, let $Z$ be an $S$-scheme, and let $G$ be a group $S$-scheme acting on $Z$ via $\alpha: G \x_S Z \to Z$. Such an action defines an equivalence relation\footnote{Which is an instance of an internal groupoid (in the cartesian-closed category $\Sets$).} $(G \x_S Z, Z, \alpha, \pr_2)$ internal to $\Sch_{/S}$, so there is an associated quotient stack (commonly denoted by $[Z/_{\alpha}G]$ or simply $[Z/G]$ when $\alpha$ is understood from the surrounding context), which by definition is the fppf $2$-sheafification of the $S$-prestack:
+                    $$(\Sch_{/S})_{\fppf}^{\op} \to 1\-\Grpd_2$$
+                    $$T \mapsto \left(Z(T), G(T) \x_{S(T)} Z(T), \alpha_T, (\pr_2)_T\right)$$
+                One important observation to make is that for all $T \in \Ob(\Sch_{/S})$, the groupoid $[Z/G](T)$ is that of fppf $G_T$-torsors on $T$ (cf. definition \ref{def: torsors}) up to isomorphisms; this\footnote{... and that the assignment of $S$-schemes $T$ to $G_T$-torsors on $T$ satisfies fppf descent (in fact, fpqc descent as well, which means that $[Z/G]$ is actually a stack on $(\Sch_{/S})_{\fpqc}$) ...} is clear from the discussion in remark \ref{remark: base_changing_torsors}. 
+            \end{example}
+            Below are several lemmas for establishing the various formal properties that one ought to check that quotient stacks satisfy. 
+            \begin{remark}[Quotient stacks over general sites] \label{remark: quotient_stacks_over_general_sites}
+                Definition \ref{def: quotient_stacks} can in fact be stated for stacks on an arbitrary site $(\C, \tau)$ with enough pullbacks and products (e.g. fppf sites of algebraic spaces): should $(U, R, s, t)$ be a groupoid internal to $\C$, then the associated quotient stack $[U/R]$ would be the $2$-sheafification of the prestack:
+                    $$(\C, \tau)^{\op} \to 1\-\Grpd_2$$
+                    $$T \mapsto (U(T), R(T), s_T, t_T)$$
+                In addition, if $G$ is a group object of $\C$ and $Z \in \Ob(\C)$ was an object of $\C$ with a $G$-action $\alpha: G \x Z \to Z$, then the associated quotient stack $[Z/G]$ will also classify $G$-torsors up to isomorphisms (i.e. for all $T \in \Ob(\C)$, the groupoid $[Z/G](T)$ is that wherein the objects are $G_T$-torsors and the morphisms are isomorphisms between them).
+            \end{remark}
+            \begin{lemma}[Quotient stacks are $2$-coequalisers] \label{lemma: universal_property_of_quotient_stacks}
+                Let $(\C, \tau)$ be a site with enough pullbacks and products and let $(U, R, s, t)$ be a groupoid internal to $\C$. Then, one shall have the following $2$-coequaliser:
+                    $$
+                        \begin{tikzcd}
+                        	R & U \\
+                        	U & {[U/R]}
+                        	\arrow["s"', from=1-1, to=2-1]
+                        	\arrow["2"{description}, "\lrcorner"{anchor=center, pos=0.125, rotate=180}, draw=none, from=2-2, to=1-1]
+                        	\arrow[from=2-1, to=2-2]
+                        	\arrow[from=1-2, to=2-2]
+                        	\arrow["t", from=1-1, to=1-2]
+                        \end{tikzcd}
+                    $$
+            \end{lemma}
+                \begin{proof}
+                    
+                \end{proof}
+            \begin{lemma}[Functoriality of quotient stacks] \label{lemma: functoriality_of_quotient_stacks}
+                Let $(\C, \tau)$ be a site with enough pullbacks and products and let $f: (U', R', s', t') \to (U, R, s, t)$ be a functor between groupoid internal to $\C$. Such a functor induces a $1$-morphism between the corresponding quotient stacks, which we denote by:
+                    $$[f]: [U'/R'] \to [U/R]$$
+            \end{lemma}
+                \begin{proof}
+                    
+                \end{proof}
+            \begin{lemma}[Base-changing quotient stacks] \label{lemma: base_changing_quotient_stacks}
+                Let $(\C, \tau)$ be a site with enough pullbacks, let $S \in \Ob(\C)$ be an arbitrary object therein, and let $(U, R, s, t)$ be a groupoid internal to $\C_{/S}$. Then, for all $T \in \Ob(\C_{/S})$, one has the following $2$-pullback square:
+                    $$
+                        \begin{tikzcd}
+                        	{[U_T/R_T]} & {[U/R]} \\
+                        	T & S
+                        	\arrow[from=1-1, to=1-2]
+                        	\arrow[from=1-2, to=2-2]
+                        	\arrow[from=1-1, to=2-1]
+                        	\arrow[from=2-1, to=2-2]
+                        	\arrow["2"{description}, "\lrcorner"{anchor=center, pos=0.125}, draw=none, from=1-1, to=2-2]
+                        \end{tikzcd}
+                    $$
+            \end{lemma}
+                \begin{proof}
+                    
+                \end{proof}
+            \begin{proposition}[Quotients of schemes by algebraic groups are algebraic stacks] \label{prop: quotients_of_schemes_by_algebraic_groups_are_algebraic_stacks}
+                Let $Z$ be a scheme over some field $k$, let $G$ be an algebraic group over $\Spec k$ that acts on $Z$ via $\alpha: G \x_{\Spec k} Z \to Z$. 
+                    \begin{enumerate}
+                        \item The quotient stack $[Z/G]$ shall be an algebraic stack whose diagonal $\Delta_{[Z/G]/S}$ is separated. 
+                        \item If $Z$ is quasi-separated (respectively, separated) over $S$, then $\Delta_{[Z/G]/S}$ will be quasi-compact (respectively, affine).
+                    \end{enumerate}
+            \end{proposition}
+                \begin{proof}
+                    \noindent
+                    \begin{enumerate}
+                        \item 
+                        \item 
+                    \end{enumerate}
+                \end{proof}
+                
+            \begin{convention}[Classifying stacks of groups] \label{conv: classifying_stacks_of_groups}
+                Let $(\C, \tau)$ be a site with terminal objects $\pt$ and enough pullbacks (hence enough products) and let $G \in \Ob(\C)$ be a group object therein which acts trivially on $\pt$. Then, the corresponding quotient stack $[\pt/G]$ will commonly be denoted by $\rmB G$.
+            \end{convention}
+        
+        \subsubsection{Mapping stacks}
+    
+    \subsection{The geometry of \texorpdfstring{$\Bun_G$}{}}
+        \subsubsection{An atlas for \texorpdfstring{$\Bun_G$}{}}
+        
+        \subsubsection{Level structures}
+        
+        \subsubsection{\texorpdfstring{$\Bun_G$}{} is smooth when \texorpdfstring{$G$}{} is smooth}
